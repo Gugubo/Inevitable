@@ -11,8 +11,20 @@ offset_bottom = 241.0
 [node name="Inventory" type="VBoxContainer" parent="HBoxContainer" unique_id=1661290803]
 layout_mode = 2
 
-[node name="InventoryItem" parent="HBoxContainer/Inventory" unique_id=319682496 instance=ExtResource("1_ig7tw")]
+[node name="Wood" parent="HBoxContainer/Inventory" unique_id=319682496 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
+
+[node name="Stone" parent="HBoxContainer/Inventory" unique_id=575270068 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+item = 1
+
+[node name="Food" parent="HBoxContainer/Inventory" unique_id=333204539 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+item = 2
+
+[node name="Tools" parent="HBoxContainer/Inventory" unique_id=331343 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+item = 3
 
 [node name="Buttons" type="VBoxContainer" parent="HBoxContainer" unique_id=636371600]
 layout_mode = 2
