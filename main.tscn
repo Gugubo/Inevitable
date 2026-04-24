@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://tq2gb80av05a"]
+
+[node name="Main" type="Node2D" unique_id=301375471]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=636371600]
+offset_right = 109.0
+offset_bottom = 66.0
+
+[node name="ButtonGatherWood" type="Button" parent="VBoxContainer" unique_id=1869758800]
+layout_mode = 2
+text = "Gather wood"
+
+[node name="ButtonGatherStone" type="Button" parent="VBoxContainer" unique_id=1842576742]
+layout_mode = 2
+text = "Gather stone"
+
+[node name="ButtonHunt" type="Button" parent="VBoxContainer" unique_id=1878059985]
+layout_mode = 2
+text = "Hunt"
+
+[node name="ButtonSmith" type="Button" parent="VBoxContainer" unique_id=1613647714]
+layout_mode = 2
+text = "Smith"
+
+[node name="ButtonThrowFeast" type="Button" parent="VBoxContainer" unique_id=1934844816]
+layout_mode = 2
+text = "Throw feast"
+
+[node name="ButtonBuildHouse" type="Button" parent="VBoxContainer" unique_id=551921350]
+layout_mode = 2
+text = "Build house"
+
+[node name="ButtonSacrifice" type="Button" parent="VBoxContainer" unique_id=1152603484]
+layout_mode = 2
+text = "Sacrifice"
