@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Inevitable"
+run/main_scene="uid://tq2gb80av05a"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*uid://cdvypjudppv0w"
 
 [physics]
 
