@@ -1,35 +1,46 @@
 [gd_scene format=3 uid="uid://tq2gb80av05a"]
 
+[ext_resource type="PackedScene" uid="uid://b1jknid0wh26y" path="res://inventory_item.tscn" id="1_ig7tw"]
+
 [node name="Main" type="Node2D" unique_id=301375471]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=636371600]
-offset_right = 109.0
-offset_bottom = 66.0
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=590169606]
+offset_right = 176.0
+offset_bottom = 241.0
 
-[node name="ButtonGatherWood" type="Button" parent="VBoxContainer" unique_id=1869758800]
+[node name="Inventory" type="VBoxContainer" parent="HBoxContainer" unique_id=1661290803]
+layout_mode = 2
+
+[node name="InventoryItem" parent="HBoxContainer/Inventory" unique_id=319682496 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="HBoxContainer" unique_id=636371600]
+layout_mode = 2
+
+[node name="ButtonGatherWood" type="Button" parent="HBoxContainer/Buttons" unique_id=1869758800]
 layout_mode = 2
 text = "Gather wood"
 
-[node name="ButtonGatherStone" type="Button" parent="VBoxContainer" unique_id=1842576742]
+[node name="ButtonGatherStone" type="Button" parent="HBoxContainer/Buttons" unique_id=1842576742]
 layout_mode = 2
 text = "Gather stone"
 
-[node name="ButtonHunt" type="Button" parent="VBoxContainer" unique_id=1878059985]
+[node name="ButtonHunt" type="Button" parent="HBoxContainer/Buttons" unique_id=1878059985]
 layout_mode = 2
 text = "Hunt"
 
-[node name="ButtonSmith" type="Button" parent="VBoxContainer" unique_id=1613647714]
+[node name="ButtonSmith" type="Button" parent="HBoxContainer/Buttons" unique_id=1613647714]
 layout_mode = 2
 text = "Smith"
 
-[node name="ButtonThrowFeast" type="Button" parent="VBoxContainer" unique_id=1934844816]
+[node name="ButtonThrowFeast" type="Button" parent="HBoxContainer/Buttons" unique_id=1934844816]
 layout_mode = 2
 text = "Throw feast"
 
-[node name="ButtonBuildHouse" type="Button" parent="VBoxContainer" unique_id=551921350]
+[node name="ButtonBuildHouse" type="Button" parent="HBoxContainer/Buttons" unique_id=551921350]
 layout_mode = 2
 text = "Build house"
 
-[node name="ButtonSacrifice" type="Button" parent="VBoxContainer" unique_id=1152603484]
+[node name="ButtonSacrifice" type="Button" parent="HBoxContainer/Buttons" unique_id=1152603484]
 layout_mode = 2
 text = "Sacrifice"
