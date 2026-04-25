@@ -10,11 +10,16 @@ extends TextureButton
 
 func _ready() -> void:
 	GameState.inventory_changed.connect(_on_inventory_changed)
+	GameState.population_changed.connect(_on_population_changed)
 	
 	update_state()
 
 
 func _on_inventory_changed(item: GameState.Item) -> void:
+	update_state()
+
+
+func _on_population_changed() -> void:
 	update_state()
 
 
@@ -37,9 +42,9 @@ func _on_pressed() -> void:
 	update_state()
 
 
-func _on_completed(loot: Dictionary[GameState.Item, int]) -> void:
+func _on_completed() -> void:
 	update_state() # Not really needed because inventory change already triggers an update
 
 
 func update_state() -> void:
-	disabled = not GameState.has_items(action.required_items)
+	disabled = (not GameState.has_items(action.required_items)) or (not GameState.has_idle_population(action.required_population))
