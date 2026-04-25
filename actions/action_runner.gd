@@ -12,6 +12,9 @@ func start(new_action: Action) -> void:
 	# Remove items from inventory
 	GameState.consume_items(action.required_items)
 	
+	# Remove idle population
+	GameState.work(action.required_population)
+	
 	# Create timer
 	_timer = get_tree().create_timer(action.duration)
 	_timer.timeout.connect(_on_complete)
@@ -29,6 +32,9 @@ func _on_complete() -> void:
 	# Add loot to inventory
 	for item in gathered_loot:
 		GameState.add_item(item, gathered_loot[item])
+	
+	# Add to idle population again
+	GameState.feierabend(action.required_population)
 	
 	# Update other effects
 	GameState.add_morale(action.morale)
