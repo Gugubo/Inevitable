@@ -9,9 +9,7 @@
 [ext_resource type="Script" path="res://population_count.gd" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://cy57hywbifofx" path="res://assets/images/Gameplay/sky.png" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://pq2x00o2tcv0" path="res://assets/images/Gameplay/scene-foreground.png" id="9_efxa6"]
-[ext_resource type="Texture2D" uid="uid://d317r3l4n58wt" path="res://assets/images/Gameplay/fire-lit.png" id="10_dg77c"]
-[ext_resource type="Texture2D" uid="uid://b7emmwwe7fd18" path="res://assets/images/Gameplay/fire-unlit.png" id="11_efxa6"]
-[ext_resource type="Texture2D" uid="uid://c2hb6fw04tmis" path="res://assets/images/Gameplay/smoke.png" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://dw412kjrmjl7a" path="res://fireplace.tscn" id="10_4c57u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -202,61 +200,6 @@ corruption = -20
 population_change = -5
 metadata/_custom_type_script = "uid://dywud87lul1w7"
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dg77c"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_dg77c")
-}],
-"loop": true,
-"name": &"lit",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_efxa6")
-}],
-"loop": true,
-"name": &"unlit",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a6jrf"]
-atlas = ExtResource("12_dg77c")
-region = Rect2(0, 0, 131, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xuqvo"]
-atlas = ExtResource("12_dg77c")
-region = Rect2(131, 0, 131, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qsp4k"]
-atlas = ExtResource("12_dg77c")
-region = Rect2(262, 0, 131, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kq58d"]
-atlas = ExtResource("12_dg77c")
-region = Rect2(393, 0, 131, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_seu75"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a6jrf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xuqvo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qsp4k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kq58d")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
-
 [node name="Main" type="Node2D" unique_id=301375471]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1660014457]
@@ -369,13 +312,4 @@ centered = false
 texture = ExtResource("9_efxa6")
 centered = false
 
-[node name="Fireplace" type="AnimatedSprite2D" parent="Background/GameplayWindow" unique_id=422936063]
-sprite_frames = SubResource("SpriteFrames_dg77c")
-animation = &"lit"
-centered = false
-
-[node name="Smoke" type="AnimatedSprite2D" parent="Background/GameplayWindow" unique_id=30762008]
-modulate = Color(1, 1, 1, 0.5019608)
-sprite_frames = SubResource("SpriteFrames_seu75")
-frame_progress = 0.4232278
-centered = false
+[node name="Fireplace" parent="Background/GameplayWindow" unique_id=811692503 instance=ExtResource("10_4c57u")]

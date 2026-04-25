@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dw412kjrmjl7a"]
+
+[ext_resource type="Texture2D" uid="uid://d317r3l4n58wt" path="res://assets/images/Gameplay/fire-lit.png" id="1_36lha"]
+[ext_resource type="Texture2D" uid="uid://b7emmwwe7fd18" path="res://assets/images/Gameplay/fire-unlit.png" id="2_mr4w2"]
+[ext_resource type="Script" uid="uid://d3n4ccaipxtj7" path="res://fireplace.gd" id="3_7l1op"]
+[ext_resource type="Texture2D" uid="uid://c2hb6fw04tmis" path="res://assets/images/Gameplay/smoke.png" id="4_n6y25"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dg77c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_36lha")
+}],
+"loop": true,
+"name": &"lit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mr4w2")
+}],
+"loop": true,
+"name": &"unlit",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_36lha"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5019608)]
+}
+
+[sub_resource type="Animation" id="Animation_mr4w2"]
+resource_name = "extinguish"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5019608), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7l1op"]
+_data = {
+&"RESET": SubResource("Animation_36lha"),
+&"extinguish": SubResource("Animation_mr4w2")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6jrf"]
+atlas = ExtResource("4_n6y25")
+region = Rect2(0, 0, 131, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuqvo"]
+atlas = ExtResource("4_n6y25")
+region = Rect2(131, 0, 131, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsp4k"]
+atlas = ExtResource("4_n6y25")
+region = Rect2(262, 0, 131, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq58d"]
+atlas = ExtResource("4_n6y25")
+region = Rect2(393, 0, 131, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_seu75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6jrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuqvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsp4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq58d")
+}],
+"loop": true,
+"name": &"smoke",
+"speed": 4.0
+}]
+
+[node name="Fireplace" type="AnimatedSprite2D" unique_id=811692503]
+sprite_frames = SubResource("SpriteFrames_dg77c")
+animation = &"lit"
+centered = false
+script = ExtResource("3_7l1op")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=647909115]
+root_node = NodePath("../Smoke")
+libraries/ = SubResource("AnimationLibrary_7l1op")
+
+[node name="Smoke" type="AnimatedSprite2D" parent="." unique_id=1417208160]
+modulate = Color(1, 1, 1, 0.5019608)
+sprite_frames = SubResource("SpriteFrames_seu75")
+animation = &"smoke"
+autoplay = "smoke"
+frame_progress = 0.12477967
+centered = false
