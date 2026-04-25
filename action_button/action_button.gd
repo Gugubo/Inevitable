@@ -18,6 +18,10 @@ func _on_inventory_changed(item: GameState.Item) -> void:
 	update_state()
 
 
+func _on_population_changed() -> void:
+	update_state()
+
+
 func _on_pressed() -> void:
 	# Make sure we have the required items
 	if not GameState.has_items(action.required_items):
@@ -42,4 +46,4 @@ func _on_completed(loot: Dictionary[GameState.Item, int]) -> void:
 
 
 func update_state() -> void:
-	disabled = not GameState.has_items(action.required_items)
+	disabled = (not GameState.has_items(action.required_items)) or (not GameState.has_idle_population(action.required_population))
