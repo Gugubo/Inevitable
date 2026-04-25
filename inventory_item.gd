@@ -8,6 +8,7 @@ extends HBoxContainer
 
 func _ready():
 	GameState.inventory_changed.connect(_on_inventory_changed)
+	_on_inventory_changed(item)
 
 
 func _on_inventory_changed(changed_item: GameState.Item):
