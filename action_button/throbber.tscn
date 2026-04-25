@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://4v2l4g0sxa1c"]
+
+[ext_resource type="Texture2D" uid="uid://cesnxngi2pw03" path="res://assets/images/UI/throbber.png" id="1_vjlou"]
+[ext_resource type="Script" uid="uid://dtldvtci3af63" path="res://action_button/throbber.gd" id="2_52ci0"]
+
+[sub_resource type="Animation" id="Animation_52ci0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5sn6"]
+atlas = ExtResource("1_vjlou")
+region = Rect2(0, 0, 6, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48km1"]
+atlas = ExtResource("1_vjlou")
+region = Rect2(6, 0, 6, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk832"]
+atlas = ExtResource("1_vjlou")
+region = Rect2(12, 0, 6, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6ra3"]
+atlas = ExtResource("1_vjlou")
+region = Rect2(18, 0, 6, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qlxr"]
+atlas = ExtResource("1_vjlou")
+region = Rect2(24, 0, 6, 4)
+
+[sub_resource type="Animation" id="Animation_s0nac"]
+resource_name = "loading"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_y5sn6"), SubResource("AtlasTexture_48km1"), SubResource("AtlasTexture_xk832"), SubResource("AtlasTexture_e6ra3"), SubResource("AtlasTexture_7qlxr")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_joug6"]
+_data = {
+&"RESET": SubResource("Animation_52ci0"),
+&"loading": SubResource("Animation_s0nac")
+}
+
+[node name="Throbber" type="TextureRect" unique_id=652248250]
+z_index = 10
+z_as_relative = false
+offset_right = 6.0
+offset_bottom = 4.0
+size_flags_horizontal = 4
+script = ExtResource("2_52ci0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=574829616]
+libraries/ = SubResource("AnimationLibrary_joug6")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

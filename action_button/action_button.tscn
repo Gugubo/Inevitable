@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="1_57oj3"]
 [ext_resource type="Script" uid="uid://dnvyerpmph6g3" path="res://action_button/action_button.gd" id="1_hae2l"]
+[ext_resource type="PackedScene" uid="uid://4v2l4g0sxa1c" path="res://action_button/throbber.tscn" id="3_7u7iw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7u7iw"]
 atlas = ExtResource("1_57oj3")
@@ -12,5 +13,14 @@ offset_right = 48.0
 offset_bottom = 13.0
 texture_normal = SubResource("AtlasTexture_7u7iw")
 script = ExtResource("1_hae2l")
+throbber_scene = ExtResource("3_7u7iw")
+
+[node name="ThrobberContainer" type="HBoxContainer" parent="." unique_id=342716810]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 44.0
+offset_bottom = 2.0
+theme_override_constants/separation = 0
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

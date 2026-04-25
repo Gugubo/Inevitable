@@ -1,7 +1,12 @@
 class_name ActionButton
 extends TextureButton
 
+@onready var throbber_container =  $ThrobberContainer
+
+@export var throbber_scene: PackedScene
+
 @export var action: Action
+
 
 func _ready() -> void:
 	GameState.inventory_changed.connect(_on_inventory_changed)
@@ -23,6 +28,11 @@ func _on_pressed() -> void:
 	add_child(runner)
 	runner.action_completed.connect(_on_completed)
 	runner.start(action)
+	
+	# Add throbber
+	var throbber = throbber_scene.instantiate()
+	throbber.duration = action.duration
+	throbber_container.add_child(throbber)
 	
 	update_state()
 
