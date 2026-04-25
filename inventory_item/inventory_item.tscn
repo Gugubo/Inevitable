@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1jknid0wh26y"]
 
 [ext_resource type="Texture2D" uid="uid://guqar60u74gp" path="res://icon.svg" id="1_5b765"]
-[ext_resource type="Script" uid="uid://5cs6xf4cgoti" path="res://inventory_item.gd" id="1_gmchj"]
+[ext_resource type="Script" uid="uid://5cs6xf4cgoti" path="res://inventory_item/inventory_item.gd" id="1_gmchj"]
 
 [node name="InventoryItem" type="HBoxContainer" unique_id=319682496]
 offset_right = 67.0

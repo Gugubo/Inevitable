@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://uc1lc4i3of7i"]
 
-[ext_resource type="Script" uid="uid://dnvyerpmph6g3" path="res://action_button.gd" id="1_hae2l"]
+[ext_resource type="Script" uid="uid://dnvyerpmph6g3" path="res://action_button/action_button.gd" id="1_hae2l"]
 
 [node name="ActionButton" type="Button" unique_id=320675261]
 text = "Action"
