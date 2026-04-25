@@ -1,9 +1,6 @@
-extends HBoxContainer
+extends Label
 
 @export var item: GameState.Item
-
-@onready var icon: TextureRect = $TextureRect
-@onready var label: Label = $Label
 
 
 func _ready():
@@ -13,4 +10,4 @@ func _ready():
 
 func _on_inventory_changed(changed_item: GameState.Item):
 	if item == changed_item:
-		label.text = GameState.item_labels[item] + ": " + str(GameState.inventory[item])
+		text = "x" + str(GameState.inventory[item])

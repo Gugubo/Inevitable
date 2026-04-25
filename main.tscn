@@ -266,30 +266,26 @@ action = SubResource("Resource_lquwl")
 
 [node name="Inventory" type="VBoxContainer" parent="Background" unique_id=1661290803]
 layout_mode = 0
-offset_left = 5.0
+offset_left = 24.0
 offset_top = 21.0
-offset_right = 48.0
-offset_bottom = 113.0
+offset_right = 33.0
+offset_bottom = 97.0
+theme_override_constants/separation = 4
 
 [node name="Population" parent="Background/Inventory" unique_id=319682496 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 
-[node name="Wood" parent="Background/Inventory" unique_id=2131792925 instance=ExtResource("1_ig7tw")]
-layout_mode = 2
-item = 1
-
-[node name="Stone" parent="Background/Inventory" unique_id=575270068 instance=ExtResource("1_ig7tw")]
-layout_mode = 2
-item = 2
-
-[node name="Food" parent="Background/Inventory" unique_id=333204539 instance=ExtResource("1_ig7tw")]
+[node name="Tools" parent="Background/Inventory" unique_id=331343 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 item = 3
 
-[node name="Tools" parent="Background/Inventory" unique_id=331343 instance=ExtResource("1_ig7tw")]
+[node name="Food" parent="Background/Inventory" unique_id=333204539 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
-item = 4
+item = 2
 
-[node name="Morale" parent="Background/Inventory" unique_id=848110126 instance=ExtResource("1_ig7tw")]
+[node name="Wood" parent="Background/Inventory" unique_id=2131792925 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
-item = 5
+
+[node name="Stone" parent="Background/Inventory" unique_id=575270068 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+item = 1
