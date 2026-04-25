@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://tq2gb80av05a"]
 
+[ext_resource type="Texture2D" uid="uid://d0j7cklmtp7db" path="res://assets/images/UI/game-screen.png" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b1jknid0wh26y" path="res://inventory_item/inventory_item.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://uc1lc4i3of7i" path="res://action_button/action_button.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://c0v0us8icuuq5" path="res://actions/loot.gd" id="3_1bvp3"]
@@ -176,84 +177,98 @@ metadata/_custom_type_script = "uid://dywud87lul1w7"
 
 [node name="Main" type="Node2D" unique_id=301375471]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=590169606]
-offset_right = 176.0
-offset_bottom = 241.0
+[node name="Background" type="TextureRect" parent="." unique_id=1660014457]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_7mycd")
 
-[node name="Inventory" type="VBoxContainer" parent="HBoxContainer" unique_id=1661290803]
-layout_mode = 2
+[node name="ActionButtons" type="VBoxContainer" parent="Background" unique_id=636371600]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_top = 6.0
+offset_right = -2.0
+offset_bottom = 133.0
+grow_horizontal = 0
+theme_override_constants/separation = 6
 
-[node name="Population" parent="HBoxContainer/Inventory" unique_id=319682496 instance=ExtResource("1_ig7tw")]
-layout_mode = 2
-
-[node name="Wood" parent="HBoxContainer/Inventory" unique_id=2131792925 instance=ExtResource("1_ig7tw")]
-layout_mode = 2
-item = 1
-
-[node name="Stone" parent="HBoxContainer/Inventory" unique_id=575270068 instance=ExtResource("1_ig7tw")]
-layout_mode = 2
-item = 2
-
-[node name="Food" parent="HBoxContainer/Inventory" unique_id=333204539 instance=ExtResource("1_ig7tw")]
-layout_mode = 2
-item = 3
-
-[node name="Tools" parent="HBoxContainer/Inventory" unique_id=331343 instance=ExtResource("1_ig7tw")]
-layout_mode = 2
-item = 4
-
-[node name="Morale" parent="HBoxContainer/Inventory" unique_id=848110126 instance=ExtResource("1_ig7tw")]
-layout_mode = 2
-item = 5
-
-[node name="Buttons" type="VBoxContainer" parent="HBoxContainer" unique_id=636371600]
-layout_mode = 2
-
-[node name="ButtonGatherWood" parent="HBoxContainer/Buttons" unique_id=1860367952 instance=ExtResource("2_0xm2m")]
+[node name="ButtonGatherWood" parent="Background/ActionButtons" unique_id=1860367952 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_272bh")
 texture_pressed = SubResource("AtlasTexture_7mycd")
 texture_disabled = SubResource("AtlasTexture_5vw27")
 action = SubResource("Resource_272bh")
 
-[node name="ButtonGatherStone" parent="HBoxContainer/Buttons" unique_id=907666310 instance=ExtResource("2_0xm2m")]
+[node name="ButtonGatherStone" parent="Background/ActionButtons" unique_id=907666310 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_kek77")
 texture_pressed = SubResource("AtlasTexture_4c57u")
 texture_disabled = SubResource("AtlasTexture_0odxb")
 action = SubResource("Resource_w48qg")
 
-[node name="ButtonHunt" parent="HBoxContainer/Buttons" unique_id=320675261 instance=ExtResource("2_0xm2m")]
+[node name="ButtonHunt" parent="Background/ActionButtons" unique_id=320675261 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_dg77c")
 texture_pressed = SubResource("AtlasTexture_ycdy4")
 texture_disabled = SubResource("AtlasTexture_lswn8")
 action = SubResource("Resource_kek77")
 
-[node name="ButtonSmith" parent="HBoxContainer/Buttons" unique_id=634532232 instance=ExtResource("2_0xm2m")]
+[node name="ButtonSmith" parent="Background/ActionButtons" unique_id=634532232 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_efxa6")
 texture_pressed = SubResource("AtlasTexture_w48qg")
 texture_disabled = SubResource("AtlasTexture_vivmo")
 action = SubResource("Resource_4c57u")
 
-[node name="ButtonThrowFeast" parent="HBoxContainer/Buttons" unique_id=1182038105 instance=ExtResource("2_0xm2m")]
+[node name="ButtonThrowFeast" parent="Background/ActionButtons" unique_id=1182038105 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_2cqfq")
 texture_pressed = SubResource("AtlasTexture_yaehf")
 texture_disabled = SubResource("AtlasTexture_074og")
 action = SubResource("Resource_dg77c")
 
-[node name="ButtonBuildHouse" parent="HBoxContainer/Buttons" unique_id=1221942816 instance=ExtResource("2_0xm2m")]
+[node name="ButtonBuildHouse" parent="Background/ActionButtons" unique_id=1221942816 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_cegan")
 texture_pressed = SubResource("AtlasTexture_82xsv")
 texture_disabled = SubResource("AtlasTexture_getpj")
 action = SubResource("Resource_2cqfq")
 
-[node name="ButtonSacrifice" parent="HBoxContainer/Buttons" unique_id=732417558 instance=ExtResource("2_0xm2m")]
+[node name="ButtonSacrifice" parent="Background/ActionButtons" unique_id=732417558 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ryguw")
 texture_pressed = SubResource("AtlasTexture_d13ii")
 texture_disabled = SubResource("AtlasTexture_1u8w0")
 action = SubResource("Resource_lquwl")
+
+[node name="Inventory" type="VBoxContainer" parent="Background" unique_id=1661290803]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 21.0
+offset_right = 48.0
+offset_bottom = 113.0
+
+[node name="Population" parent="Background/Inventory" unique_id=319682496 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+
+[node name="Wood" parent="Background/Inventory" unique_id=2131792925 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+item = 1
+
+[node name="Stone" parent="Background/Inventory" unique_id=575270068 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+item = 2
+
+[node name="Food" parent="Background/Inventory" unique_id=333204539 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+item = 3
+
+[node name="Tools" parent="Background/Inventory" unique_id=331343 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+item = 4
+
+[node name="Morale" parent="Background/Inventory" unique_id=848110126 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+item = 5
