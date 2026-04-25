@@ -4,6 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://uc1lc4i3of7i" path="res://action_button/action_button.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://c0v0us8icuuq5" path="res://actions/loot.gd" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://dywud87lul1w7" path="res://actions/action.gd" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="4_7mycd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(0, 0, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(0, 13, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(0, 26, 48, 13)
 
 [sub_resource type="Resource" id="Resource_7mycd"]
 script = ExtResource("3_1bvp3")
@@ -16,6 +29,18 @@ name = "Gather wood"
 loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_7mycd")])
 metadata/_custom_type_script = "uid://dywud87lul1w7"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(48, 0, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(48, 13, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0odxb"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(48, 26, 48, 13)
+
 [sub_resource type="Resource" id="Resource_1bvp3"]
 script = ExtResource("3_1bvp3")
 item = 2
@@ -27,6 +52,18 @@ name = "Gather stone"
 loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_1bvp3")])
 metadata/_custom_type_script = "uid://dywud87lul1w7"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(96, 0, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(96, 13, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lswn8"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(96, 26, 48, 13)
+
 [sub_resource type="Resource" id="Resource_5vw27"]
 script = ExtResource("3_1bvp3")
 item = 3
@@ -37,6 +74,18 @@ script = ExtResource("3_h2yge")
 name = "Hunt"
 loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_5vw27")])
 metadata/_custom_type_script = "uid://dywud87lul1w7"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(144, 0, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(144, 13, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(144, 26, 48, 13)
 
 [sub_resource type="Resource" id="Resource_efxa6"]
 script = ExtResource("3_1bvp3")
@@ -52,6 +101,18 @@ required_items = Dictionary[int, int]({
 loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_efxa6")])
 metadata/_custom_type_script = "uid://dywud87lul1w7"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(192, 0, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaehf"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(192, 13, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(192, 26, 48, 13)
+
 [sub_resource type="Resource" id="Resource_ycdy4"]
 script = ExtResource("3_1bvp3")
 item = 5
@@ -63,6 +124,18 @@ name = "Throw feast"
 loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_ycdy4")])
 metadata/_custom_type_script = "uid://dywud87lul1w7"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(288, 0, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82xsv"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(288, 13, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_getpj"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(288, 26, 48, 13)
+
 [sub_resource type="Resource" id="Resource_vivmo"]
 script = ExtResource("3_1bvp3")
 metadata/_custom_type_script = "uid://c0v0us8icuuq5"
@@ -72,6 +145,18 @@ script = ExtResource("3_h2yge")
 name = "Build house"
 loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_vivmo")])
 metadata/_custom_type_script = "uid://dywud87lul1w7"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryguw"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(240, 0, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d13ii"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(240, 13, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u8w0"]
+atlas = ExtResource("4_7mycd")
+region = Rect2(240, 26, 48, 13)
 
 [sub_resource type="Resource" id="Resource_yaehf"]
 script = ExtResource("3_1bvp3")
@@ -126,28 +211,49 @@ layout_mode = 2
 
 [node name="ButtonGatherWood" parent="HBoxContainer/Buttons" unique_id=1860367952 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_272bh")
+texture_pressed = SubResource("AtlasTexture_7mycd")
+texture_disabled = SubResource("AtlasTexture_5vw27")
 action = SubResource("Resource_272bh")
 
 [node name="ButtonGatherStone" parent="HBoxContainer/Buttons" unique_id=907666310 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_kek77")
+texture_pressed = SubResource("AtlasTexture_4c57u")
+texture_disabled = SubResource("AtlasTexture_0odxb")
 action = SubResource("Resource_w48qg")
 
 [node name="ButtonHunt" parent="HBoxContainer/Buttons" unique_id=320675261 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_dg77c")
+texture_pressed = SubResource("AtlasTexture_ycdy4")
+texture_disabled = SubResource("AtlasTexture_lswn8")
 action = SubResource("Resource_kek77")
 
 [node name="ButtonSmith" parent="HBoxContainer/Buttons" unique_id=634532232 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_efxa6")
+texture_pressed = SubResource("AtlasTexture_w48qg")
+texture_disabled = SubResource("AtlasTexture_vivmo")
 action = SubResource("Resource_4c57u")
 
 [node name="ButtonThrowFeast" parent="HBoxContainer/Buttons" unique_id=1182038105 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_2cqfq")
+texture_pressed = SubResource("AtlasTexture_yaehf")
+texture_disabled = SubResource("AtlasTexture_074og")
 action = SubResource("Resource_dg77c")
 
 [node name="ButtonBuildHouse" parent="HBoxContainer/Buttons" unique_id=1221942816 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_cegan")
+texture_pressed = SubResource("AtlasTexture_82xsv")
+texture_disabled = SubResource("AtlasTexture_getpj")
 action = SubResource("Resource_2cqfq")
 
 [node name="ButtonSacrifice" parent="HBoxContainer/Buttons" unique_id=732417558 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ryguw")
+texture_pressed = SubResource("AtlasTexture_d13ii")
+texture_disabled = SubResource("AtlasTexture_1u8w0")
 action = SubResource("Resource_lquwl")

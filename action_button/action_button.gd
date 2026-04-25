@@ -1,12 +1,10 @@
 class_name ActionButton
-extends Button
+extends TextureButton
 
 @export var action: Action
 
 func _ready() -> void:
 	GameState.inventory_changed.connect(_on_inventory_changed)
-	
-	text = action.name
 	
 	update_state()
 
