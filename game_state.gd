@@ -21,6 +21,22 @@ var item_labels: Dictionary[Item, String] = {
 	Item.TOOLS: "Tools",
 }
 
+func _ready() -> void:
+	reset()
+
+
+func reset() -> void:
+	population = 30
+	morale = 100
+	corruption = 0
+	
+	inventory = {
+		Item.WOOD: 10,
+		Item.STONE: 10,
+		Item.FOOD: 15,
+		Item.TOOLS: 15,
+	}
+
 
 func add_item(item: Item, amount: int) -> void:
 	inventory[item] += amount
