@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://5cs6xf4cgoti" path="res://inventory_item/inventory_item.gd" id="1_gmchj"]
 
 [node name="InventoryItem" type="HBoxContainer" unique_id=319682496]
-offset_right = 67.0
-offset_bottom = 23.0
+offset_right = 43.0
+offset_bottom = 12.0
 script = ExtResource("1_gmchj")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=972060861]
@@ -15,4 +15,5 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="." unique_id=620307141]
 layout_mode = 2
+theme_override_font_sizes/font_size = 8
 text = "Item: 0"
