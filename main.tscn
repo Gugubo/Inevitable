@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c0v0us8icuuq5" path="res://actions/loot.gd" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://dywud87lul1w7" path="res://actions/action.gd" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://beayunt17uq6t" path="res://population_count.gd" id="6_272bh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -272,8 +273,11 @@ offset_right = 33.0
 offset_bottom = 97.0
 theme_override_constants/separation = 4
 
-[node name="Population" parent="Background/Inventory" unique_id=319682496 instance=ExtResource("1_ig7tw")]
+[node name="Population" type="Label" parent="Background/Inventory" unique_id=70089085]
 layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "x999"
+script = ExtResource("6_272bh")
 
 [node name="Tools" parent="Background/Inventory" unique_id=331343 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
