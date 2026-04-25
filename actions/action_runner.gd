@@ -1,7 +1,7 @@
 class_name ActionRunner
 extends Node
 
-signal action_completed(loot: Dictionary[GameState.Item, int])
+signal action_completed
 
 var action: Action
 var _timer: SceneTreeTimer
@@ -30,7 +30,12 @@ func _on_complete() -> void:
 	for item in gathered_loot:
 		GameState.add_item(item, gathered_loot[item])
 	
-	action_completed.emit(gathered_loot)
+	# Update other effects
+	GameState.add_morale(action.morale)
+	GameState.add_corruption(action.corruption)
+	GameState.add_population(action.population_change)
+	
+	action_completed.emit()
 	
 	# Cease to exist
 	queue_free()
