@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://c0v0us8icuuq5" path="res://actions/loot.gd" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://dywud87lul1w7" path="res://actions/action.gd" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="4_7mycd"]
-[ext_resource type="Script" path="res://population_count.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://beayunt17uq6t" path="res://population_count.gd" id="6_272bh"]
+[ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="6_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cy57hywbifofx" path="res://assets/images/Gameplay/sky.png" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://pq2x00o2tcv0" path="res://assets/images/Gameplay/scene-foreground.png" id="9_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dw412kjrmjl7a" path="res://fireplace.tscn" id="10_4c57u"]
@@ -270,16 +271,18 @@ action = SubResource("Resource_lquwl")
 
 [node name="Inventory" type="VBoxContainer" parent="Background" unique_id=1661290803]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 21.0
-offset_right = 33.0
+offset_left = 22.0
+offset_top = 24.0
+offset_right = 44.0
 offset_bottom = 97.0
-theme_override_constants/separation = 4
+theme_override_constants/separation = 10
 
 [node name="Population" type="Label" parent="Background/Inventory" unique_id=70089085]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("6_efxa6")
+theme_override_font_sizes/font_size = 7
 text = "x999"
+horizontal_alignment = 2
 script = ExtResource("6_272bh")
 
 [node name="Tools" parent="Background/Inventory" unique_id=331343 instance=ExtResource("1_ig7tw")]

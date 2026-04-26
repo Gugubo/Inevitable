@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_population_changed():
-	text = str(GameState.idle_population) + "/" + str(GameState.total_population)
+	text = "x" + str(GameState.idle_population)
