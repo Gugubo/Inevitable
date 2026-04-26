@@ -3,17 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://d0j7cklmtp7db" path="res://assets/images/UI/game-screen.png" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b1jknid0wh26y" path="res://inventory_item/inventory_item.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://uc1lc4i3of7i" path="res://action_button/action_button.tscn" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://c0v0us8icuuq5" path="res://actions/loot.gd" id="3_1bvp3"]
-[ext_resource type="Script" uid="uid://dywud87lul1w7" path="res://actions/action.gd" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://beayunt17uq6t" path="res://population_count.gd" id="6_272bh"]
 [ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="6_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cy57hywbifofx" path="res://assets/images/Gameplay/sky.png" id="8_4c57u"]
+[ext_resource type="Resource" uid="uid://i07fg5tavs5" path="res://actions/gather_wood.tres" id="8_yaehf"]
+[ext_resource type="Resource" uid="uid://tqrrnartyr5k" path="res://actions/mine_stone.tres" id="9_074og"]
 [ext_resource type="Texture2D" uid="uid://pq2x00o2tcv0" path="res://assets/images/Gameplay/scene-foreground.png" id="9_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dw412kjrmjl7a" path="res://fireplace.tscn" id="10_4c57u"]
+[ext_resource type="Resource" uid="uid://lrc7hatq002o" path="res://actions/hunt.tres" id="10_cegan"]
 [ext_resource type="PackedScene" uid="uid://b3xqhcafcla8a" path="res://ted/ted.tscn" id="10_w48qg"]
+[ext_resource type="Resource" uid="uid://bhr2mbsf0xte0" path="res://actions/smith.tres" id="11_cegan"]
+[ext_resource type="Resource" uid="uid://t05i4ack2b5s" path="res://actions/throw_feast.tres" id="12_82xsv"]
 [ext_resource type="Script" uid="uid://b1gufhbkjfmuo" path="res://population.gd" id="12_dg77c"]
+[ext_resource type="Resource" uid="uid://bbrwtp8jfcfmi" path="res://actions/build_house.tres" id="13_getpj"]
 [ext_resource type="PackedScene" uid="uid://oplkeubmpyxy" path="res://citizen.tscn" id="13_ycdy4"]
+[ext_resource type="Resource" uid="uid://dyxstjes2nrlh" path="res://actions/sacrifice.tres" id="14_ryguw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -27,23 +32,6 @@ region = Rect2(0, 13, 48, 13)
 atlas = ExtResource("4_7mycd")
 region = Rect2(0, 26, 48, 13)
 
-[sub_resource type="Resource" id="Resource_7mycd"]
-script = ExtResource("3_1bvp3")
-min_amount = 4
-max_amount = 10
-metadata/_custom_type_script = "uid://c0v0us8icuuq5"
-
-[sub_resource type="Resource" id="Resource_272bh"]
-script = ExtResource("3_h2yge")
-name = "Gather wood"
-required_population = 5
-required_items = Dictionary[int, int]({
-3: 3
-})
-duration = 8.0
-loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_7mycd")])
-metadata/_custom_type_script = "uid://dywud87lul1w7"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
 atlas = ExtResource("4_7mycd")
 region = Rect2(48, 0, 48, 13)
@@ -55,24 +43,6 @@ region = Rect2(48, 13, 48, 13)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0odxb"]
 atlas = ExtResource("4_7mycd")
 region = Rect2(48, 26, 48, 13)
-
-[sub_resource type="Resource" id="Resource_1bvp3"]
-script = ExtResource("3_1bvp3")
-item = 1
-min_amount = 6
-max_amount = 12
-metadata/_custom_type_script = "uid://c0v0us8icuuq5"
-
-[sub_resource type="Resource" id="Resource_w48qg"]
-script = ExtResource("3_h2yge")
-name = "Gather stone"
-required_population = 8
-required_items = Dictionary[int, int]({
-3: 4
-})
-duration = 12.0
-loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_1bvp3")])
-metadata/_custom_type_script = "uid://dywud87lul1w7"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
 atlas = ExtResource("4_7mycd")
@@ -86,24 +56,6 @@ region = Rect2(96, 13, 48, 13)
 atlas = ExtResource("4_7mycd")
 region = Rect2(96, 26, 48, 13)
 
-[sub_resource type="Resource" id="Resource_5vw27"]
-script = ExtResource("3_1bvp3")
-item = 2
-min_amount = 8
-max_amount = 20
-metadata/_custom_type_script = "uid://c0v0us8icuuq5"
-
-[sub_resource type="Resource" id="Resource_kek77"]
-script = ExtResource("3_h2yge")
-name = "Hunt"
-required_population = 10
-required_items = Dictionary[int, int]({
-3: 6
-})
-duration = 12.0
-loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_5vw27")])
-metadata/_custom_type_script = "uid://dywud87lul1w7"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
 atlas = ExtResource("4_7mycd")
 region = Rect2(144, 0, 48, 13)
@@ -115,25 +67,6 @@ region = Rect2(144, 13, 48, 13)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
 atlas = ExtResource("4_7mycd")
 region = Rect2(144, 26, 48, 13)
-
-[sub_resource type="Resource" id="Resource_efxa6"]
-script = ExtResource("3_1bvp3")
-item = 3
-min_amount = 6
-max_amount = 8
-metadata/_custom_type_script = "uid://c0v0us8icuuq5"
-
-[sub_resource type="Resource" id="Resource_4c57u"]
-script = ExtResource("3_h2yge")
-name = "Smith"
-required_population = 5
-required_items = Dictionary[int, int]({
-0: 2,
-1: 5
-})
-duration = 12.0
-loot = Array[ExtResource("3_1bvp3")]([SubResource("Resource_efxa6")])
-metadata/_custom_type_script = "uid://dywud87lul1w7"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
 atlas = ExtResource("4_7mycd")
@@ -147,17 +80,6 @@ region = Rect2(192, 13, 48, 13)
 atlas = ExtResource("4_7mycd")
 region = Rect2(192, 26, 48, 13)
 
-[sub_resource type="Resource" id="Resource_dg77c"]
-script = ExtResource("3_h2yge")
-name = "Throw feast"
-required_population = 8
-required_items = Dictionary[int, int]({
-2: 15
-})
-duration = 15.0
-morale = 15.0
-metadata/_custom_type_script = "uid://dywud87lul1w7"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
 atlas = ExtResource("4_7mycd")
 region = Rect2(288, 0, 48, 13)
@@ -170,18 +92,6 @@ region = Rect2(288, 13, 48, 13)
 atlas = ExtResource("4_7mycd")
 region = Rect2(288, 26, 48, 13)
 
-[sub_resource type="Resource" id="Resource_2cqfq"]
-script = ExtResource("3_h2yge")
-name = "Build house"
-required_population = 8
-required_items = Dictionary[int, int]({
-0: 10,
-1: 10
-})
-duration = 20.0
-population_change = 10
-metadata/_custom_type_script = "uid://dywud87lul1w7"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryguw"]
 atlas = ExtResource("4_7mycd")
 region = Rect2(240, 0, 48, 13)
@@ -193,16 +103,6 @@ region = Rect2(240, 13, 48, 13)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1u8w0"]
 atlas = ExtResource("4_7mycd")
 region = Rect2(240, 26, 48, 13)
-
-[sub_resource type="Resource" id="Resource_lquwl"]
-script = ExtResource("3_h2yge")
-name = "SACRIFICE"
-required_population = 5
-duration = 5.0
-morale = -10.0
-corruption = -20.0
-population_change = -5
-metadata/_custom_type_script = "uid://dywud87lul1w7"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ycdy4"]
 vertices = PackedVector2Array(19.703125, -6.03125, 31.820313, -0.4296875, 31.148438, 2.2734375, 19.75, 7.0234375, 6.90625, 9, -7.90625, 9, -20.75, 7.0234375, -32.148438, 2.2734375, -32.820313, -0.4296875, -20.703125, -6.03125, -7.90625, -8, 6.90625, -8)
@@ -254,49 +154,49 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_272bh")
 texture_pressed = SubResource("AtlasTexture_7mycd")
 texture_disabled = SubResource("AtlasTexture_5vw27")
-action = SubResource("Resource_272bh")
+action = ExtResource("8_yaehf")
 
 [node name="ButtonGatherStone" parent="ActionButtons" unique_id=907666310 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_kek77")
 texture_pressed = SubResource("AtlasTexture_4c57u")
 texture_disabled = SubResource("AtlasTexture_0odxb")
-action = SubResource("Resource_w48qg")
+action = ExtResource("9_074og")
 
 [node name="ButtonHunt" parent="ActionButtons" unique_id=320675261 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_dg77c")
 texture_pressed = SubResource("AtlasTexture_ycdy4")
 texture_disabled = SubResource("AtlasTexture_lswn8")
-action = SubResource("Resource_kek77")
+action = ExtResource("10_cegan")
 
 [node name="ButtonSmith" parent="ActionButtons" unique_id=634532232 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_efxa6")
 texture_pressed = SubResource("AtlasTexture_w48qg")
 texture_disabled = SubResource("AtlasTexture_vivmo")
-action = SubResource("Resource_4c57u")
+action = ExtResource("11_cegan")
 
 [node name="ButtonThrowFeast" parent="ActionButtons" unique_id=1182038105 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_2cqfq")
 texture_pressed = SubResource("AtlasTexture_yaehf")
 texture_disabled = SubResource("AtlasTexture_074og")
-action = SubResource("Resource_dg77c")
+action = ExtResource("12_82xsv")
 
 [node name="ButtonBuildHouse" parent="ActionButtons" unique_id=1221942816 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_cegan")
 texture_pressed = SubResource("AtlasTexture_82xsv")
 texture_disabled = SubResource("AtlasTexture_getpj")
-action = SubResource("Resource_2cqfq")
+action = ExtResource("13_getpj")
 
 [node name="ButtonSacrifice" parent="ActionButtons" unique_id=732417558 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ryguw")
 texture_pressed = SubResource("AtlasTexture_d13ii")
 texture_disabled = SubResource("AtlasTexture_1u8w0")
-action = SubResource("Resource_lquwl")
+action = ExtResource("14_ryguw")
 
 [node name="Inventory" type="VBoxContainer" parent="." unique_id=1661290803]
 offset_left = 22.0

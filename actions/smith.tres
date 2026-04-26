@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://bhr2mbsf0xte0"]
+
+[ext_resource type="Script" uid="uid://c0v0us8icuuq5" path="res://actions/loot.gd" id="1_rmigk"]
+[ext_resource type="Script" uid="uid://dywud87lul1w7" path="res://actions/action.gd" id="2_3cbmj"]
+
+[sub_resource type="Resource" id="Resource_efxa6"]
+script = ExtResource("1_rmigk")
+item = 3
+min_amount = 6
+max_amount = 8
+metadata/_custom_type_script = "uid://c0v0us8icuuq5"
+
+[resource]
+script = ExtResource("2_3cbmj")
+name = "Smith"
+required_population = 5
+required_items = Dictionary[int, int]({
+0: 2,
+1: 5
+})
+duration = 12.0
+loot = Array[ExtResource("1_rmigk")]([SubResource("Resource_efxa6")])
+metadata/_custom_type_script = "uid://dywud87lul1w7"

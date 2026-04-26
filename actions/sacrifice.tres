@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://dyxstjes2nrlh"]
+
+[ext_resource type="Script" uid="uid://c0v0us8icuuq5" path="res://actions/loot.gd" id="1_dwl1h"]
+[ext_resource type="Script" uid="uid://dywud87lul1w7" path="res://actions/action.gd" id="2_qeso6"]
+
+[resource]
+script = ExtResource("2_qeso6")
+name = "SACRIFICE"
+required_population = 5
+duration = 5.0
+morale = -10.0
+corruption = -20.0
+population_change = -5
+metadata/_custom_type_script = "uid://dywud87lul1w7"

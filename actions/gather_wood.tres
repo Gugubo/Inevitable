@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://i07fg5tavs5"]
+
+[ext_resource type="Script" uid="uid://c0v0us8icuuq5" path="res://actions/loot.gd" id="1_jhma7"]
+[ext_resource type="Script" uid="uid://dywud87lul1w7" path="res://actions/action.gd" id="2_4ynt4"]
+
+[sub_resource type="Resource" id="Resource_7mycd"]
+script = ExtResource("1_jhma7")
+min_amount = 4
+max_amount = 10
+metadata/_custom_type_script = "uid://c0v0us8icuuq5"
+
+[resource]
+script = ExtResource("2_4ynt4")
+name = "Gather wood"
+required_population = 5
+required_items = Dictionary[int, int]({
+3: 3
+})
+duration = 8.0
+loot = Array[ExtResource("1_jhma7")]([SubResource("Resource_7mycd")])
+metadata/_custom_type_script = "uid://dywud87lul1w7"

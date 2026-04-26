@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://t05i4ack2b5s"]
+
+[ext_resource type="Script" uid="uid://c0v0us8icuuq5" path="res://actions/loot.gd" id="1_ir37r"]
+[ext_resource type="Script" uid="uid://dywud87lul1w7" path="res://actions/action.gd" id="2_5je0u"]
+
+[resource]
+script = ExtResource("2_5je0u")
+name = "Throw feast"
+required_population = 8
+required_items = Dictionary[int, int]({
+2: 15
+})
+duration = 15.0
+morale = 15.0
+metadata/_custom_type_script = "uid://dywud87lul1w7"
