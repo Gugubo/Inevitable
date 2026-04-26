@@ -8,6 +8,6 @@ extends Resource
 @export var duration: float = 0 # in seconds
 
 @export var loot: Array[Loot] = []
-@export var morale: int = 0
-@export var corruption: int = 0
+@export var morale: float = 0.0
+@export var corruption: float = 0.0
 @export var population_change: int = 0

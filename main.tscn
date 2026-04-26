@@ -154,7 +154,7 @@ required_items = Dictionary[int, int]({
 2: 15
 })
 duration = 15.0
-morale = 15
+morale = 15.0
 metadata/_custom_type_script = "uid://dywud87lul1w7"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
@@ -198,8 +198,8 @@ script = ExtResource("3_h2yge")
 name = "SACRIFICE"
 required_population = 5
 duration = 5.0
-morale = -10
-corruption = -20
+morale = -10.0
+corruption = -20.0
 population_change = -5
 metadata/_custom_type_script = "uid://dywud87lul1w7"
 

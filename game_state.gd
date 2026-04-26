@@ -7,8 +7,8 @@ signal population_changed
 
 var total_population = 0
 var idle_population = 0
-var morale = 0
-var corruption = 0
+var morale = 0.0 # 0 - 100
+var corruption = 0.0 # 0 - 100
 
 var inventory: Dictionary[Item, int] = {
 	Item.WOOD: 0,
@@ -31,8 +31,8 @@ func reset() -> void:
 	total_population = 30
 	idle_population = total_population
 	
-	morale = 100
-	corruption = 0
+	morale = 100.0
+	corruption = 0.0
 	
 	inventory = {
 		Item.WOOD: 10,
@@ -74,11 +74,11 @@ func feierabend(workers: int) -> void:
 	population_changed.emit()
 
 
-func add_morale(morale_delta: int) -> void:
+func add_morale(morale_delta: float) -> void:
 	morale += morale_delta
 
 
-func add_corruption(corruption_delta: int) -> void:
+func add_corruption(corruption_delta: float) -> void:
 	corruption += corruption_delta
 
 
