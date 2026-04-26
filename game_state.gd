@@ -10,6 +10,9 @@ var idle_population = 0
 var morale = 0.0 # 0 - 100
 var corruption = 0.0 # 0 - 100
 
+var corruption_speed = 1.0
+var corruption_acceleration = 0.001
+
 var inventory: Dictionary[Item, int] = {
 	Item.WOOD: 0,
 	Item.STONE: 0,
@@ -25,6 +28,11 @@ var item_labels: Dictionary[Item, String] = {
 
 func _ready() -> void:
 	reset()
+
+
+func _process(delta: float) -> void:
+	corruption = clampf(corruption + delta * corruption_speed, 0, 100)
+	corruption_speed += delta * corruption_acceleration
 
 
 func reset() -> void:
