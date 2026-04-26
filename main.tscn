@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cy57hywbifofx" path="res://assets/images/Gameplay/sky.png" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://pq2x00o2tcv0" path="res://assets/images/Gameplay/scene-foreground.png" id="9_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dw412kjrmjl7a" path="res://fireplace.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://b3xqhcafcla8a" path="res://ted/ted.tscn" id="10_w48qg"]
 [ext_resource type="Script" uid="uid://b1gufhbkjfmuo" path="res://population.gd" id="12_dg77c"]
 [ext_resource type="PackedScene" uid="uid://oplkeubmpyxy" path="res://citizen.tscn" id="13_ycdy4"]
 
@@ -318,6 +319,8 @@ offset_bottom = 131.0
 [node name="Sky" type="Sprite2D" parent="Background/GameplayWindow" unique_id=1960669182]
 texture = ExtResource("8_4c57u")
 centered = false
+
+[node name="Ted" parent="Background/GameplayWindow" unique_id=1288190444 instance=ExtResource("10_w48qg")]
 
 [node name="City" type="Sprite2D" parent="Background/GameplayWindow" unique_id=1136363122]
 texture = ExtResource("9_efxa6")

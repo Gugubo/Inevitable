@@ -90,3 +90,7 @@ func add_population(population_delta: int) -> void:
 	idle_population += population_delta
 	
 	population_changed.emit()
+
+
+func get_corruption_factor() -> float:
+	return clamp(corruption / 100.0, 0, 1)

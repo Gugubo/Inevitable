@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bxm1wuq01vwrr"]
+
+[ext_resource type="Texture2D" uid="uid://clqjwa7loq0on" path="res://assets/images/Gameplay/ted/ted-small-eye-1.png" id="1_anlqy"]
+[ext_resource type="Script" uid="uid://0p6hk40pj0ue" path="res://ted/small_eye.gd" id="2_oktve"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtgle"]
+atlas = ExtResource("1_anlqy")
+region = Rect2(131, 0, 131, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11uep"]
+atlas = ExtResource("1_anlqy")
+region = Rect2(0, 0, 131, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anlqy"]
+atlas = ExtResource("1_anlqy")
+region = Rect2(131, 0, 131, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcb14"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_jtgle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11uep")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anlqy")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}]
+
+[node name="SmallEye" type="AnimatedSprite2D" unique_id=807597957]
+sprite_frames = SubResource("SpriteFrames_kcb14")
+animation = &"close"
+script = ExtResource("2_oktve")
+
+[node name="Timer" type="Timer" parent="." unique_id=748602306]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
