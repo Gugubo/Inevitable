@@ -29,6 +29,8 @@
 [ext_resource type="Script" uid="uid://bvw2u3t8ixsal" path="res://morale.gd" id="21_ryguw"]
 [ext_resource type="AudioStream" uid="uid://bojeosbf85vbo" path="res://assets/audio/sfx/build_sfx.ogg" id="22_ryguw"]
 [ext_resource type="AudioStream" uid="uid://dqfv4og2nc5he" path="res://assets/audio/music/inevitable.wav" id="28_kq58d"]
+[ext_resource type="Texture2D" uid="uid://cyotl4fk8ghqt" path="res://assets/images/Gameplay/heart.png" id="30_seu75"]
+[ext_resource type="Script" uid="uid://do3ew6jf2h586" path="res://heart.gd" id="31_htxhm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -130,6 +132,28 @@ vertices = PackedVector2Array(176.39063, 114.85156, 185, 126.328125, 185, 129.86
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(153, 120, 154, 116, 159, 108, 177, 114, 186, 126, 186, 131, 162, 128)])
 agent_radius = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq2sk"]
+atlas = ExtResource("30_seu75")
+region = Rect2(0, 0, 40, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k2k6"]
+atlas = ExtResource("30_seu75")
+region = Rect2(40, 0, 40, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rl1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq2sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k2k6")
+}],
+"loop": true,
+"name": &"beat",
+"speed": 2.0
+}]
 
 [node name="Main" type="Node2D" unique_id=301375471]
 
@@ -297,3 +321,11 @@ script = ExtResource("21_ryguw")
 stream = ExtResource("28_kq58d")
 autoplay = true
 bus = &"Music"
+
+[node name="Heart" type="AnimatedSprite2D" parent="." unique_id=1305841]
+position = Vector2(26, 114)
+sprite_frames = SubResource("SpriteFrames_0rl1p")
+animation = &"beat"
+autoplay = "beat"
+frame_progress = 0.20407738
+script = ExtResource("31_htxhm")
