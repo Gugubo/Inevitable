@@ -99,7 +99,15 @@ func add_population(population_delta: int) -> void:
 	total_population += population_delta
 	idle_population += population_delta
 	
+	if total_population <= 0:
+		game_over()
+	
 	population_changed.emit()
+
+
+func game_over() -> void:
+	morale = 0
+	morale_changed.emit(0)
 
 
 func get_corruption_factor() -> float:
