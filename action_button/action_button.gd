@@ -7,9 +7,11 @@ extends TextureButton
 
 @onready var down_sfx = $ButtonDownSFX
 @onready var up_sfx = $ButtonUpSFX
+@onready var completed_sfx = $CompletedSFX
 
 @export var throbber_scene: PackedScene
 @export var resource_count_scene: PackedScene
+@export var completed_sfx_stream: AudioStream
 
 @export var action: Action
 
@@ -23,6 +25,8 @@ var item_to_icon: Dictionary[GameState.Item, ResourceCount.Icon] = {
 func _ready() -> void:
 	GameState.inventory_changed.connect(_on_inventory_changed)
 	GameState.population_changed.connect(_on_population_changed)
+	
+	completed_sfx.stream = completed_sfx_stream
 	
 	update_state()
 	
@@ -71,6 +75,7 @@ func _on_pressed() -> void:
 
 
 func _on_completed() -> void:
+	completed_sfx.play()
 	update_state() # Not really needed because inventory change already triggers an update
 
 

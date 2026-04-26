@@ -6,22 +6,29 @@
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://beayunt17uq6t" path="res://population_count.gd" id="6_272bh"]
 [ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="6_efxa6"]
+[ext_resource type="AudioStream" uid="uid://rnfthrajw8nk" path="res://assets/audio/sfx/chop_sfx.ogg" id="8_0odxb"]
 [ext_resource type="Texture2D" uid="uid://cy57hywbifofx" path="res://assets/images/Gameplay/sky.png" id="8_4c57u"]
 [ext_resource type="Resource" uid="uid://i07fg5tavs5" path="res://actions/gather_wood.tres" id="8_yaehf"]
 [ext_resource type="Resource" uid="uid://tqrrnartyr5k" path="res://actions/mine_stone.tres" id="9_074og"]
 [ext_resource type="Texture2D" uid="uid://pq2x00o2tcv0" path="res://assets/images/Gameplay/scene-foreground.png" id="9_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dw412kjrmjl7a" path="res://fireplace.tscn" id="10_4c57u"]
 [ext_resource type="Resource" uid="uid://lrc7hatq002o" path="res://actions/hunt.tres" id="10_cegan"]
+[ext_resource type="AudioStream" uid="uid://c62i3bpwliij5" path="res://assets/audio/sfx/mine_sfx.ogg" id="10_lswn8"]
 [ext_resource type="PackedScene" uid="uid://b3xqhcafcla8a" path="res://ted/ted.tscn" id="10_w48qg"]
 [ext_resource type="Resource" uid="uid://bhr2mbsf0xte0" path="res://actions/smith.tres" id="11_cegan"]
 [ext_resource type="Resource" uid="uid://t05i4ack2b5s" path="res://actions/throw_feast.tres" id="12_82xsv"]
 [ext_resource type="Script" uid="uid://b1gufhbkjfmuo" path="res://population.gd" id="12_dg77c"]
+[ext_resource type="AudioStream" uid="uid://ei8w2kr752a1" path="res://assets/audio/sfx/hunt_sfx.ogg" id="12_qsp4k"]
+[ext_resource type="AudioStream" uid="uid://bbh30kauxt8p8" path="res://assets/audio/sfx/smith_sfx.ogg" id="13_a6jrf"]
 [ext_resource type="Resource" uid="uid://bbrwtp8jfcfmi" path="res://actions/build_house.tres" id="13_getpj"]
 [ext_resource type="PackedScene" uid="uid://oplkeubmpyxy" path="res://citizen.tscn" id="13_ycdy4"]
 [ext_resource type="Resource" uid="uid://dyxstjes2nrlh" path="res://actions/sacrifice.tres" id="14_ryguw"]
+[ext_resource type="AudioStream" uid="uid://xglueedrojwc" path="res://assets/audio/sfx/feast_sfx.ogg" id="15_xuqvo"]
+[ext_resource type="AudioStream" uid="uid://dnextsah71sq4" path="res://assets/audio/sfx/sacrifice_sfx.ogg" id="19_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://b851y26ywjhgn" path="res://assets/images/UI/resources.png" id="20_getpj"]
 [ext_resource type="Script" uid="uid://bvw2u3t8ixsal" path="res://morale.gd" id="21_ryguw"]
-[ext_resource type="AudioStream" uid="uid://dqfv4og2nc5he" path="res://assets/audio/music/inevitable.wav" id="22_ryguw"]
+[ext_resource type="AudioStream" uid="uid://bojeosbf85vbo" path="res://assets/audio/sfx/build_sfx.ogg" id="22_ryguw"]
+[ext_resource type="AudioStream" uid="uid://dqfv4og2nc5he" path="res://assets/audio/music/inevitable.wav" id="28_kq58d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -168,6 +175,7 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_272bh")
 texture_pressed = SubResource("AtlasTexture_7mycd")
 texture_disabled = SubResource("AtlasTexture_5vw27")
+completed_sfx_stream = ExtResource("8_0odxb")
 action = ExtResource("8_yaehf")
 
 [node name="ButtonGatherStone" parent="ActionButtons" unique_id=907666310 instance=ExtResource("2_0xm2m")]
@@ -175,6 +183,7 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_kek77")
 texture_pressed = SubResource("AtlasTexture_4c57u")
 texture_disabled = SubResource("AtlasTexture_0odxb")
+completed_sfx_stream = ExtResource("10_lswn8")
 action = ExtResource("9_074og")
 
 [node name="ButtonHunt" parent="ActionButtons" unique_id=320675261 instance=ExtResource("2_0xm2m")]
@@ -182,6 +191,7 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_dg77c")
 texture_pressed = SubResource("AtlasTexture_ycdy4")
 texture_disabled = SubResource("AtlasTexture_lswn8")
+completed_sfx_stream = ExtResource("12_qsp4k")
 action = ExtResource("10_cegan")
 
 [node name="ButtonSmith" parent="ActionButtons" unique_id=634532232 instance=ExtResource("2_0xm2m")]
@@ -189,6 +199,7 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_efxa6")
 texture_pressed = SubResource("AtlasTexture_w48qg")
 texture_disabled = SubResource("AtlasTexture_vivmo")
+completed_sfx_stream = ExtResource("13_a6jrf")
 action = ExtResource("11_cegan")
 
 [node name="ButtonThrowFeast" parent="ActionButtons" unique_id=1182038105 instance=ExtResource("2_0xm2m")]
@@ -196,6 +207,7 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_2cqfq")
 texture_pressed = SubResource("AtlasTexture_yaehf")
 texture_disabled = SubResource("AtlasTexture_074og")
+completed_sfx_stream = ExtResource("15_xuqvo")
 action = ExtResource("12_82xsv")
 
 [node name="ButtonBuildHouse" parent="ActionButtons" unique_id=1221942816 instance=ExtResource("2_0xm2m")]
@@ -203,6 +215,7 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_cegan")
 texture_pressed = SubResource("AtlasTexture_82xsv")
 texture_disabled = SubResource("AtlasTexture_getpj")
+completed_sfx_stream = ExtResource("22_ryguw")
 action = ExtResource("13_getpj")
 
 [node name="ButtonSacrifice" parent="ActionButtons" unique_id=732417558 instance=ExtResource("2_0xm2m")]
@@ -210,6 +223,7 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ryguw")
 texture_pressed = SubResource("AtlasTexture_d13ii")
 texture_disabled = SubResource("AtlasTexture_1u8w0")
+completed_sfx_stream = ExtResource("19_qsp4k")
 action = ExtResource("14_ryguw")
 
 [node name="Inventory" type="VBoxContainer" parent="." unique_id=1661290803]
@@ -280,6 +294,6 @@ frame = 10
 script = ExtResource("21_ryguw")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=246652146]
-stream = ExtResource("22_ryguw")
+stream = ExtResource("28_kq58d")
 autoplay = true
 bus = &"Music"
