@@ -10,10 +10,10 @@ extends Node2D
 @export var y_full_corruption = 0
 
 ## Corruption factor when eyelid starts to open
-@export var eyelid_open = 0.8
+@export var eyelid_open = 0.75
 
 ## Corruption factor when small eyes starts to open
-@export var small_eyes_open = 0.8
+@export var small_eyes_open = 0.85
 
 var target_y = y_no_corruption
 var speed = 0.5
