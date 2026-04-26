@@ -1,14 +1,15 @@
-[gd_scene format=3 uid="uid://xjxemphrcmmg"]
+[gd_scene format=3 uid="uid://dipc2dqnstscj"]
 
 [ext_resource type="Texture2D" uid="uid://ckp7y4samf1de" path="res://assets/images/UI/title-screen/title-screen.png" id="1_ig5kc"]
 [ext_resource type="Texture2D" uid="uid://ccrjwi4gasyxk" path="res://assets/images/UI/title-screen/title-logo.png" id="2_05l2w"]
 [ext_resource type="Texture2D" uid="uid://cmuqper6qinbi" path="res://assets/images/UI/title-screen/menu-buttons.png" id="3_hafda"]
-[ext_resource type="Script" uid="uid://bty8ptb4d5weg" path="res://quit_button.gd" id="4_05l2w"]
-[ext_resource type="Script" uid="uid://dklqemx8c2odt" path="res://start_game_button.gd" id="4_hafda"]
+[ext_resource type="Script" path="res://quit_button.gd" id="4_05l2w"]
+[ext_resource type="Script" path="res://start_game_button.gd" id="4_hafda"]
 [ext_resource type="PackedScene" uid="uid://tq2gb80av05a" path="res://main.tscn" id="5_tpml5"]
-[ext_resource type="Script" uid="uid://b0altx2jkhdvm" path="res://how_to_play_button.gd" id="6_013yr"]
+[ext_resource type="Script" path="res://how_to_play_button.gd" id="6_013yr"]
 [ext_resource type="Texture2D" uid="uid://ct0u3ake51to" path="res://assets/images/UI/title-screen/title-tutorial.png" id="8_8vmu4"]
-[ext_resource type="Script" uid="uid://4j8rdiko8xie" path="res://back_button.gd" id="9_8vmu4"]
+[ext_resource type="Script" path="res://back_button.gd" id="9_8vmu4"]
+[ext_resource type="AudioStream" uid="uid://d4jgtsls1iw37" path="res://assets/audio/music/inevitable_title.wav" id="10_xfn3p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpml5"]
 atlas = ExtResource("3_hafda")
@@ -111,6 +112,10 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_xfn3p")
 texture_pressed = SubResource("AtlasTexture_rhgbh")
 script = ExtResource("9_8vmu4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1618835191]
+stream = ExtResource("10_xfn3p")
+autoplay = true
 
 [connection signal="pressed" from="CenterContainer/Buttons/StartGameButton" to="CenterContainer/Buttons/StartGameButton" method="_on_pressed"]
 [connection signal="pressed" from="CenterContainer/Buttons/HowToPlayButton" to="CenterContainer/Buttons/HowToPlayButton" method="_on_pressed"]
