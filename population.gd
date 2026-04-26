@@ -16,6 +16,7 @@ extends Node2D
 var citizens: Array[Citizen] = []
 
 func _ready() -> void:
+	GameState.game_end.connect(_on_game_over)
 	await get_tree().create_timer(0.05).timeout
 	for i in range(GameState.total_population):
 		add_citizen()
@@ -56,3 +57,9 @@ func sacrifice(lambs: Array[Citizen]) -> void:
 	for lamb in lambs:
 		citizens.erase(lamb)
 		lamb.ascend()
+
+
+func _on_game_over() -> void:
+	for citizen in citizens:
+		citizen.ascend()
+	citizens = []
