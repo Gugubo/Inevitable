@@ -15,6 +15,10 @@ run/main_scene="uid://xjxemphrcmmg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dq07swrhgufif"
+
 [autoload]
 
 GameState="*uid://cdvypjudppv0w"
@@ -26,6 +30,7 @@ window/size/viewport_height=135
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://bbqldqkak7ord"
 
 [physics]
 
