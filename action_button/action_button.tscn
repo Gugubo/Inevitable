@@ -76,7 +76,7 @@ offset_right = -54.0
 offset_bottom = 0.5
 grow_horizontal = 0
 grow_vertical = 2
-mouse_filter = 0
+mouse_filter = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1839730506]
 root_node = NodePath("../RequiredResourcesContainer")

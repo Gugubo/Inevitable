@@ -36,3 +36,13 @@ func _blink() -> void:
 
 func _on_timer_timeout() -> void:
 	_blink()
+
+
+func _on_area_2d_mouse_entered() -> void:
+	if is_open:
+		play("close")
+
+
+func _on_area_2d_mouse_exited() -> void:
+	if is_open:
+		play("blink")

@@ -16,6 +16,7 @@ region = Rect2(0, 0, 16, 16)
 [node name="ResourceCount" type="HBoxContainer" unique_id=1999185418]
 offset_right = 22.0
 offset_bottom = 16.0
+mouse_filter = 2
 theme_override_constants/separation = 0
 script = ExtResource("1_k6bog")
 textures = Dictionary[int, Texture2D]({
@@ -34,4 +35,5 @@ text = "5"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1568280698]
 layout_mode = 2
+mouse_filter = 2
 texture = SubResource("AtlasTexture_3jrom")

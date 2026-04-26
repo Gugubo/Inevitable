@@ -103,6 +103,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4riy2"]
+radius = 5.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hes3"]
 atlas = ExtResource("7_0dud2")
 region = Rect2(131, 0, 131, 87)
@@ -231,15 +234,48 @@ centered = false
 [node name="SmallEye1" parent="." unique_id=807597957 instance=ExtResource("6_smm3a")]
 centered = false
 
+[node name="Area2D" type="Area2D" parent="SmallEye1" unique_id=183231803]
+position = Vector2(37, 45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallEye1/Area2D" unique_id=797418454]
+shape = SubResource("CircleShape2D_4riy2")
+
 [node name="SmallEye2" parent="." unique_id=1845922144 instance=ExtResource("6_smm3a")]
 sprite_frames = SubResource("SpriteFrames_redfw")
 animation = &"blink"
 centered = false
 
+[node name="Area2D" type="Area2D" parent="SmallEye2" unique_id=2104817762]
+position = Vector2(49, 54)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallEye2/Area2D" unique_id=1430989231]
+shape = SubResource("CircleShape2D_4riy2")
+
 [node name="SmallEye3" parent="." unique_id=831250120 instance=ExtResource("6_smm3a")]
 sprite_frames = SubResource("SpriteFrames_5kbfk")
 centered = false
 
+[node name="Area2D" type="Area2D" parent="SmallEye3" unique_id=533987941]
+position = Vector2(92, 39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallEye3/Area2D" unique_id=2021046612]
+shape = SubResource("CircleShape2D_4riy2")
+
 [node name="SmallEye4" parent="." unique_id=1271026906 instance=ExtResource("6_smm3a")]
 sprite_frames = SubResource("SpriteFrames_nx0xg")
 centered = false
+
+[node name="Area2D" type="Area2D" parent="SmallEye4" unique_id=1142142964]
+position = Vector2(92, 55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallEye4/Area2D" unique_id=615755704]
+shape = SubResource("CircleShape2D_4riy2")
+
+[connection signal="mouse_entered" from="SmallEye1/Area2D" to="SmallEye1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SmallEye1/Area2D" to="SmallEye1" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="SmallEye2/Area2D" to="SmallEye2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SmallEye2/Area2D" to="SmallEye2" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="SmallEye3/Area2D" to="SmallEye3" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SmallEye3/Area2D" to="SmallEye3" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="SmallEye4/Area2D" to="SmallEye4" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SmallEye4/Area2D" to="SmallEye4" method="_on_area_2d_mouse_exited"]
