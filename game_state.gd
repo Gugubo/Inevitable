@@ -14,7 +14,7 @@ var morale = 0.0 # 0 - 100
 var corruption = 0.0 # 0 - 100
 
 var corruption_speed = 1.0
-var corruption_acceleration = 0.001
+var corruption_acceleration = 0.002
 
 var inventory: Dictionary[Item, int] = {
 	Item.WOOD: 0,
