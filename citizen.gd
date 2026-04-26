@@ -33,6 +33,7 @@ func _start_walking() -> void:
 func _stop_walking() -> void:
 	walking = false
 	sprite.animation = "idle"
+	timer.stop()
 
 
 func _physics_process(_delta):
