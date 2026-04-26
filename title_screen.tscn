@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://bty8ptb4d5weg" path="res://quit_button.gd" id="4_05l2w"]
 [ext_resource type="Script" uid="uid://dklqemx8c2odt" path="res://start_game_button.gd" id="4_hafda"]
 [ext_resource type="PackedScene" uid="uid://tq2gb80av05a" path="res://main.tscn" id="5_tpml5"]
+[ext_resource type="Script" uid="uid://b0altx2jkhdvm" path="res://how_to_play_button.gd" id="6_013yr"]
+[ext_resource type="Texture2D" uid="uid://ct0u3ake51to" path="res://assets/images/UI/title-screen/title-tutorial.png" id="8_8vmu4"]
+[ext_resource type="Script" uid="uid://4j8rdiko8xie" path="res://back_button.gd" id="9_8vmu4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpml5"]
 atlas = ExtResource("3_hafda")
@@ -30,6 +33,14 @@ region = Rect2(128, 0, 32, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vmu4"]
 atlas = ExtResource("3_hafda")
 region = Rect2(128, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfn3p"]
+atlas = ExtResource("3_hafda")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhgbh"]
+atlas = ExtResource("3_hafda")
+region = Rect2(32, 32, 32, 16)
 
 [node name="TitleScreen" type="Control" unique_id=1051004784]
 layout_mode = 3
@@ -71,6 +82,7 @@ main_scene = ExtResource("5_tpml5")
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_013yr")
 texture_pressed = SubResource("AtlasTexture_05l2w")
+script = ExtResource("6_013yr")
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Buttons" unique_id=1744441587]
 layout_mode = 2
@@ -81,5 +93,26 @@ texture_normal = SubResource("AtlasTexture_ig5kc")
 texture_pressed = SubResource("AtlasTexture_8vmu4")
 script = ExtResource("4_05l2w")
 
+[node name="HowToPlay" type="TextureRect" parent="." unique_id=2008380358]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_8vmu4")
+
+[node name="CenterContainer" type="CenterContainer" parent="HowToPlay" unique_id=1641763542]
+layout_mode = 0
+offset_top = 115.0
+offset_right = 240.0
+offset_bottom = 135.0
+
+[node name="BackButton" type="TextureButton" parent="HowToPlay/CenterContainer" unique_id=1098225810]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_xfn3p")
+texture_pressed = SubResource("AtlasTexture_rhgbh")
+script = ExtResource("9_8vmu4")
+
 [connection signal="pressed" from="CenterContainer/Buttons/StartGameButton" to="CenterContainer/Buttons/StartGameButton" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/Buttons/HowToPlayButton" to="CenterContainer/Buttons/HowToPlayButton" method="_on_pressed"]
 [connection signal="pressed" from="CenterContainer/Buttons/CenterContainer/QuitButton" to="CenterContainer/Buttons/CenterContainer/QuitButton" method="_on_pressed"]
+[connection signal="pressed" from="HowToPlay/CenterContainer/BackButton" to="HowToPlay/CenterContainer/BackButton" method="_on_pressed"]
