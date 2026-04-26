@@ -212,82 +212,100 @@ agent_radius = 1.0
 
 [node name="Main" type="Node2D" unique_id=301375471]
 
+[node name="GameplayWindow" type="Control" parent="." unique_id=1262575473]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 55.0
+offset_top = 3.0
+offset_right = 186.0
+offset_bottom = 131.0
+
+[node name="Sky" type="Sprite2D" parent="GameplayWindow" unique_id=1960669182]
+texture = ExtResource("8_4c57u")
+centered = false
+
+[node name="Ted" parent="GameplayWindow" unique_id=1288190444 instance=ExtResource("10_w48qg")]
+
+[node name="City" type="Sprite2D" parent="GameplayWindow" unique_id=1136363122]
+texture = ExtResource("9_efxa6")
+centered = false
+
+[node name="Fireplace" parent="GameplayWindow" unique_id=811692503 instance=ExtResource("10_4c57u")]
+y_sort_enabled = true
+
 [node name="Background" type="TextureRect" parent="." unique_id=1660014457]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 240.0
+offset_bottom = 135.0
 texture = ExtResource("1_7mycd")
 
-[node name="ActionButtons" type="VBoxContainer" parent="Background" unique_id=636371600]
-z_index = 1
-layout_mode = 1
+[node name="ActionButtons" type="VBoxContainer" parent="." unique_id=636371600]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -50.0
+offset_left = 190.0
 offset_top = 6.0
-offset_right = -2.0
+offset_right = 238.0
 offset_bottom = 133.0
 grow_horizontal = 0
 theme_override_constants/separation = 6
 
-[node name="ButtonGatherWood" parent="Background/ActionButtons" unique_id=1860367952 instance=ExtResource("2_0xm2m")]
+[node name="ButtonGatherWood" parent="ActionButtons" unique_id=1860367952 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_272bh")
 texture_pressed = SubResource("AtlasTexture_7mycd")
 texture_disabled = SubResource("AtlasTexture_5vw27")
 action = SubResource("Resource_272bh")
 
-[node name="ButtonGatherStone" parent="Background/ActionButtons" unique_id=907666310 instance=ExtResource("2_0xm2m")]
+[node name="ButtonGatherStone" parent="ActionButtons" unique_id=907666310 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_kek77")
 texture_pressed = SubResource("AtlasTexture_4c57u")
 texture_disabled = SubResource("AtlasTexture_0odxb")
 action = SubResource("Resource_w48qg")
 
-[node name="ButtonHunt" parent="Background/ActionButtons" unique_id=320675261 instance=ExtResource("2_0xm2m")]
+[node name="ButtonHunt" parent="ActionButtons" unique_id=320675261 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_dg77c")
 texture_pressed = SubResource("AtlasTexture_ycdy4")
 texture_disabled = SubResource("AtlasTexture_lswn8")
 action = SubResource("Resource_kek77")
 
-[node name="ButtonSmith" parent="Background/ActionButtons" unique_id=634532232 instance=ExtResource("2_0xm2m")]
+[node name="ButtonSmith" parent="ActionButtons" unique_id=634532232 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_efxa6")
 texture_pressed = SubResource("AtlasTexture_w48qg")
 texture_disabled = SubResource("AtlasTexture_vivmo")
 action = SubResource("Resource_4c57u")
 
-[node name="ButtonThrowFeast" parent="Background/ActionButtons" unique_id=1182038105 instance=ExtResource("2_0xm2m")]
+[node name="ButtonThrowFeast" parent="ActionButtons" unique_id=1182038105 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_2cqfq")
 texture_pressed = SubResource("AtlasTexture_yaehf")
 texture_disabled = SubResource("AtlasTexture_074og")
 action = SubResource("Resource_dg77c")
 
-[node name="ButtonBuildHouse" parent="Background/ActionButtons" unique_id=1221942816 instance=ExtResource("2_0xm2m")]
+[node name="ButtonBuildHouse" parent="ActionButtons" unique_id=1221942816 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_cegan")
 texture_pressed = SubResource("AtlasTexture_82xsv")
 texture_disabled = SubResource("AtlasTexture_getpj")
 action = SubResource("Resource_2cqfq")
 
-[node name="ButtonSacrifice" parent="Background/ActionButtons" unique_id=732417558 instance=ExtResource("2_0xm2m")]
+[node name="ButtonSacrifice" parent="ActionButtons" unique_id=732417558 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ryguw")
 texture_pressed = SubResource("AtlasTexture_d13ii")
 texture_disabled = SubResource("AtlasTexture_1u8w0")
 action = SubResource("Resource_lquwl")
 
-[node name="Inventory" type="VBoxContainer" parent="Background" unique_id=1661290803]
-layout_mode = 0
+[node name="Inventory" type="VBoxContainer" parent="." unique_id=1661290803]
 offset_left = 22.0
 offset_top = 24.0
 offset_right = 44.0
 offset_bottom = 97.0
 theme_override_constants/separation = 10
 
-[node name="Population" type="Label" parent="Background/Inventory" unique_id=70089085]
+[node name="Population" type="Label" parent="Inventory" unique_id=70089085]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_efxa6")
 theme_override_font_sizes/font_size = 7
@@ -295,40 +313,20 @@ text = "x999"
 horizontal_alignment = 2
 script = ExtResource("6_272bh")
 
-[node name="Tools" parent="Background/Inventory" unique_id=331343 instance=ExtResource("1_ig7tw")]
+[node name="Tools" parent="Inventory" unique_id=331343 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 item = 3
 
-[node name="Food" parent="Background/Inventory" unique_id=333204539 instance=ExtResource("1_ig7tw")]
+[node name="Food" parent="Inventory" unique_id=333204539 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 item = 2
 
-[node name="Wood" parent="Background/Inventory" unique_id=2131792925 instance=ExtResource("1_ig7tw")]
+[node name="Wood" parent="Inventory" unique_id=2131792925 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 
-[node name="Stone" parent="Background/Inventory" unique_id=575270068 instance=ExtResource("1_ig7tw")]
+[node name="Stone" parent="Inventory" unique_id=575270068 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 item = 1
-
-[node name="GameplayWindow" type="Control" parent="Background" unique_id=1262575473]
-anchors_preset = 0
-offset_left = 55.0
-offset_top = 3.0
-offset_right = 186.0
-offset_bottom = 131.0
-
-[node name="Sky" type="Sprite2D" parent="Background/GameplayWindow" unique_id=1960669182]
-texture = ExtResource("8_4c57u")
-centered = false
-
-[node name="Ted" parent="Background/GameplayWindow" unique_id=1288190444 instance=ExtResource("10_w48qg")]
-
-[node name="City" type="Sprite2D" parent="Background/GameplayWindow" unique_id=1136363122]
-texture = ExtResource("9_efxa6")
-centered = false
-
-[node name="Fireplace" parent="Background/GameplayWindow" unique_id=811692503 instance=ExtResource("10_4c57u")]
-y_sort_enabled = true
 
 [node name="Population" type="Node2D" parent="." unique_id=569172170]
 script = ExtResource("12_dg77c")
