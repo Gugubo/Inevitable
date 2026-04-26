@@ -28,6 +28,23 @@ func _spawn_tween() -> void:
 	tween.parallel().tween_property(self, "position:y", position.y, 1).from(position.y - 10)
 
 
+func ascend() -> void:
+	sprite.animation = "ghost"
+	_die_tween()
+
+
+func _die_tween() -> void:
+	var tween = get_tree().create_tween()
+	
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
+	
+	tween.tween_property(self, "modulate:a", 0.0, 2)
+	tween.parallel().tween_property(self, "scale:y", 3, 3)
+	tween.parallel().tween_property(self, "position:y", position.y - 20, 3)
+	
+	tween.tween_callback(queue_free)
+
+
 func set_busy(next_busy: bool) -> void:
 	busy = next_busy
 	sprite.speed_scale = 3 if busy else 1

@@ -55,4 +55,4 @@ func free_workers(workers: Array[Citizen]) -> void:
 func sacrifice(lambs: Array[Citizen]) -> void:
 	for lamb in lambs:
 		citizens.erase(lamb)
-		lamb.queue_free()
+		lamb.ascend()
