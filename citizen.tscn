@@ -92,13 +92,14 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=766083747]
-path_desired_distance = 1.0
-target_desired_distance = 1.0
+path_desired_distance = 5.0
+target_desired_distance = 5.0
 path_max_distance = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=56020047]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_noc4a")
+disabled = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1294023337]
 wait_time = 10.0

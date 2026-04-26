@@ -14,10 +14,10 @@ metadata/_custom_type_script = "uid://c0v0us8icuuq5"
 script = ExtResource("2_3cbmj")
 name = "Smith"
 required_population = 5
+duration = 12.0
 required_items = Dictionary[int, int]({
 0: 2,
 1: 5
 })
-duration = 12.0
 loot = Array[ExtResource("1_rmigk")]([SubResource("Resource_efxa6")])
 metadata/_custom_type_script = "uid://dywud87lul1w7"

@@ -12,10 +12,11 @@ metadata/_custom_type_script = "uid://c0v0us8icuuq5"
 [resource]
 script = ExtResource("2_4ynt4")
 name = "Gather wood"
+work_area = 1
 required_population = 5
+duration = 8.0
 required_items = Dictionary[int, int]({
 3: 3
 })
-duration = 8.0
 loot = Array[ExtResource("1_jhma7")]([SubResource("Resource_7mycd")])
 metadata/_custom_type_script = "uid://dywud87lul1w7"

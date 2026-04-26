@@ -23,7 +23,7 @@ func start(new_action: Action) -> void:
 	# Remove idle population
 	GameState.work(action.required_population)
 	
-	workers = population.get_workers(action.required_population)
+	workers = population.get_workers(action.required_population, action.work_area)
 	
 	# Create timer
 	_timer = get_tree().create_timer(action.duration)
