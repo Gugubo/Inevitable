@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://dyxstjes2nrlh" path="res://actions/sacrifice.tres" id="14_ryguw"]
 [ext_resource type="Texture2D" uid="uid://b851y26ywjhgn" path="res://assets/images/UI/resources.png" id="20_getpj"]
 [ext_resource type="Script" uid="uid://bvw2u3t8ixsal" path="res://morale.gd" id="21_ryguw"]
+[ext_resource type="AudioStream" uid="uid://dqfv4og2nc5he" path="res://assets/audio/music/inevitable.wav" id="22_ryguw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -277,3 +278,8 @@ hframes = 6
 vframes = 2
 frame = 10
 script = ExtResource("21_ryguw")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=246652146]
+stream = ExtResource("22_ryguw")
+autoplay = true
+bus = &"Music"
