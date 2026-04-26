@@ -16,6 +16,9 @@ var corruption = 0.0 # 0 - 100
 var corruption_speed = 1.0
 var corruption_acceleration = 0.002
 
+var corruption_game_over_period = 10
+var corruption_game_over_timer = 0
+
 var inventory: Dictionary[Item, int] = {
 	Item.WOOD: 0,
 	Item.STONE: 0,
@@ -41,7 +44,11 @@ func _process(delta: float) -> void:
 	corruption_speed += delta * corruption_acceleration
 	
 	if corruption >= 100:
-		game_over()
+		corruption_game_over_timer += delta
+		if corruption_game_over_timer >= corruption_game_over_period:
+			game_over()
+	else:
+		corruption_game_over_timer = 0
 
 
 func reset() -> void:

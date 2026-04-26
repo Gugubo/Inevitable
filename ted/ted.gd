@@ -15,12 +15,15 @@ extends Node2D
 ## Corruption factor when small eyes starts to open
 @export var small_eyes_open = 0.85
 
+
+var base_x = 0
 var target_y = y_no_corruption
 var speed = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position.y = y_no_corruption
+	base_x = global_position.x
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,6 +37,12 @@ func _process(delta: float) -> void:
 	# Update eyes
 	_update_eyelid()
 	_update_small_eyes()
+	
+	if GameState.corruption_game_over_timer >= 0:
+		var f = GameState.corruption_game_over_timer/50.0
+		global_position += Vector2(randf_range(-f, f), randf_range(-f, f))
+	else:
+		global_position.x = base_x
 
 
 func _update_eyelid() -> void:
