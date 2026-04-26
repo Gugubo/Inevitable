@@ -14,6 +14,20 @@ var busy = false
 var walking = false
 
 
+func _ready() -> void:
+	_spawn_tween()
+
+
+func _spawn_tween() -> void:
+	var tween = get_tree().create_tween()
+	
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
+	
+	tween.tween_property(self, "modulate:a", 1.0, 1).from(0.0)
+	tween.parallel().tween_property(self, "scale:y", 1.0, 1).from(2)
+	tween.parallel().tween_property(self, "position:y", position.y, 1).from(position.y - 10)
+
+
 func set_busy(next_busy: bool) -> void:
 	busy = next_busy
 	sprite.speed_scale = 3 if busy else 1
