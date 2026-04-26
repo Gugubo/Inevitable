@@ -13,7 +13,8 @@ config_version=5
 config/name="Inevitable"
 run/main_scene="uid://xjxemphrcmmg"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://ckp7y4samf1de"
+config/icon="uid://b1k7uxndhx8hn"
 
 [audio]
 
