@@ -53,6 +53,12 @@ func _on_complete() -> void:
 	GameState.add_corruption(action.corruption)
 	GameState.add_population(action.population_change)
 	
+	if action.population_change < 0:
+		population.sacrifice(workers)
+	elif action.population_change > 0:
+		for i in range(action.population_change):
+			population.add_citizen()
+	
 	action_completed.emit()
 	
 	# Cease to exist

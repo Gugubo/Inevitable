@@ -38,3 +38,9 @@ func get_workers(n: int) -> Array[Citizen]:
 func free_workers(workers: Array[Citizen]) -> void:
 	for worker in workers:
 		worker.set_busy(false)
+
+
+func sacrifice(lambs: Array[Citizen]) -> void:
+	for lamb in lambs:
+		citizens.erase(lamb)
+		lamb.queue_free()
