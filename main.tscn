@@ -19,6 +19,8 @@
 [ext_resource type="Resource" uid="uid://bbrwtp8jfcfmi" path="res://actions/build_house.tres" id="13_getpj"]
 [ext_resource type="PackedScene" uid="uid://oplkeubmpyxy" path="res://citizen.tscn" id="13_ycdy4"]
 [ext_resource type="Resource" uid="uid://dyxstjes2nrlh" path="res://actions/sacrifice.tres" id="14_ryguw"]
+[ext_resource type="Texture2D" uid="uid://b851y26ywjhgn" path="res://assets/images/UI/resources.png" id="20_getpj"]
+[ext_resource type="Script" uid="uid://bvw2u3t8ixsal" path="res://morale.gd" id="21_ryguw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -239,3 +241,11 @@ navigation_polygon = SubResource("NavigationPolygon_ycdy4")
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Population/Place" unique_id=370780085]
 position = Vector2(0, -4)
 radius = 2.0
+
+[node name="Morale" type="Sprite2D" parent="." unique_id=389839595]
+position = Vector2(26, 11)
+texture = ExtResource("20_getpj")
+hframes = 6
+vframes = 2
+frame = 10
+script = ExtResource("21_ryguw")

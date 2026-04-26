@@ -4,6 +4,7 @@ enum Item { WOOD, STONE, FOOD, TOOLS }
 
 signal inventory_changed(item: Item)
 signal population_changed
+signal morale_changed(morale: float)
 
 var total_population = 0
 var idle_population = 0
@@ -84,6 +85,7 @@ func feierabend(workers: int) -> void:
 
 func add_morale(morale_delta: float) -> void:
 	morale += morale_delta
+	morale_changed.emit(morale)
 
 
 func add_corruption(corruption_delta: float) -> void:
