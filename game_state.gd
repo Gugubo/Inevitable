@@ -1,10 +1,12 @@
 extends Node
 
 enum Item { WOOD, STONE, FOOD, TOOLS }
+enum State { MENU, PLAYING, GAME_OVER }
 
 signal inventory_changed(item: Item)
 signal population_changed
 signal morale_changed(morale: float)
+signal game_end
 
 var total_population = 0
 var idle_population = 0
@@ -27,6 +29,8 @@ var item_labels: Dictionary[Item, String] = {
 	Item.TOOLS: "Tools",
 }
 
+var state = State.PLAYING
+
 func _ready() -> void:
 	reset()
 
@@ -34,6 +38,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	corruption = clampf(corruption + delta * corruption_speed, 0, 100)
 	corruption_speed += delta * corruption_acceleration
+	
+	if corruption >= 100:
+		game_over()
 
 
 func reset() -> void:
@@ -106,6 +113,10 @@ func add_population(population_delta: int) -> void:
 
 
 func game_over() -> void:
+	state = State.GAME_OVER
+	
+	game_end.emit()
+	
 	morale = 0
 	morale_changed.emit(0)
 

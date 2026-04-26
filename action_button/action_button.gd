@@ -80,7 +80,10 @@ func _on_completed() -> void:
 
 
 func update_state() -> void:
-	disabled = (not GameState.has_items(action.required_items)) or (not GameState.has_idle_population(action.required_population))
+	var enough_items = GameState.has_items(action.required_items)
+	var enough_population = GameState.has_idle_population(action.required_population)
+	var still_playing = GameState.state == GameState.State.PLAYING
+	disabled = not (enough_items and enough_population and still_playing)
 
 
 func _on_mouse_entered() -> void:

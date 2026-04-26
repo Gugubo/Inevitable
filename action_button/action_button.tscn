@@ -86,12 +86,12 @@ libraries/ = SubResource("AnimationLibrary_vcsai")
 
 [node name="ButtonDownSFX" type="AudioStreamPlayer" parent="." unique_id=284668394]
 stream = ExtResource("5_5d1x3")
-volume_db = -12.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="ButtonUpSFX" type="AudioStreamPlayer" parent="." unique_id=177639252]
 stream = ExtResource("6_vcsai")
-volume_db = -12.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="CompletedSFX" type="AudioStreamPlayer" parent="." unique_id=1609420800]
