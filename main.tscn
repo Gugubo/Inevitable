@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cy57hywbifofx" path="res://assets/images/Gameplay/sky.png" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://pq2x00o2tcv0" path="res://assets/images/Gameplay/scene-foreground.png" id="9_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dw412kjrmjl7a" path="res://fireplace.tscn" id="10_4c57u"]
+[ext_resource type="Script" uid="uid://b1gufhbkjfmuo" path="res://population.gd" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://oplkeubmpyxy" path="res://citizen.tscn" id="13_ycdy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -201,6 +203,12 @@ corruption = -20
 population_change = -5
 metadata/_custom_type_script = "uid://dywud87lul1w7"
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ycdy4"]
+vertices = PackedVector2Array(19.703125, -6.03125, 31.820313, -0.4296875, 31.148438, 2.2734375, 19.75, 7.0234375, 6.90625, 9, -7.90625, 9, -20.75, 7.0234375, -32.148438, 2.2734375, -32.820313, -0.4296875, -20.703125, -6.03125, -7.90625, -8, 6.90625, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-33, 3, -21, 8, -8, 10, 7, 10, 20, 8, 32, 3, 33, -1, 20, -7, 7, -9, -8, -9, -21, -7, -34, -1)])
+agent_radius = 1.0
+
 [node name="Main" type="Node2D" unique_id=301375471]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1660014457]
@@ -316,3 +324,16 @@ texture = ExtResource("9_efxa6")
 centered = false
 
 [node name="Fireplace" parent="Background/GameplayWindow" unique_id=811692503 instance=ExtResource("10_4c57u")]
+y_sort_enabled = true
+
+[node name="Population" type="Node2D" parent="." unique_id=569172170]
+script = ExtResource("12_dg77c")
+citizen_scene = ExtResource("13_ycdy4")
+
+[node name="Place" type="NavigationRegion2D" parent="Population" unique_id=1892312192]
+position = Vector2(121, 117)
+navigation_polygon = SubResource("NavigationPolygon_ycdy4")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Population/Place" unique_id=370780085]
+position = Vector2(0, -4)
+radius = 2.0

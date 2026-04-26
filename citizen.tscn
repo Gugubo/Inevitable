@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://oplkeubmpyxy"]
+
+[ext_resource type="Texture2D" uid="uid://dxv3433sg6dtt" path="res://assets/images/Gameplay/citizen.png" id="1_3aquc"]
+[ext_resource type="Script" uid="uid://dndulv7tt03mg" path="res://citizen.gd" id="1_noc4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noc4a"]
+atlas = ExtResource("1_3aquc")
+region = Rect2(0, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihwdb"]
+atlas = ExtResource("1_3aquc")
+region = Rect2(7, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwd63"]
+atlas = ExtResource("1_3aquc")
+region = Rect2(14, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7w01"]
+atlas = ExtResource("1_3aquc")
+region = Rect2(21, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsols"]
+atlas = ExtResource("1_3aquc")
+region = Rect2(28, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e6ur"]
+atlas = ExtResource("1_3aquc")
+region = Rect2(35, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uch7b"]
+atlas = ExtResource("1_3aquc")
+region = Rect2(42, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01cm5"]
+atlas = ExtResource("1_3aquc")
+region = Rect2(49, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq2ic"]
+atlas = ExtResource("1_3aquc")
+region = Rect2(56, 0, 7, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fat3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noc4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihwdb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwd63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7w01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsols")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e6ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uch7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01cm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq2ic")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noc4a"]
+size = Vector2(2, 2)
+
+[node name="Citizen" type="CharacterBody2D" unique_id=354843610]
+script = ExtResource("1_noc4a")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1627487854]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_fat3w")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=766083747]
+path_desired_distance = 1.0
+target_desired_distance = 1.0
+path_max_distance = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=56020047]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_noc4a")
+
+[node name="Timer" type="Timer" parent="." unique_id=1294023337]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

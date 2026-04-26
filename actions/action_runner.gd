@@ -6,6 +6,14 @@ signal action_completed
 var action: Action
 var _timer: SceneTreeTimer
 
+var population: Population
+var workers: Array[Citizen] = []
+
+
+func _ready():
+	population = get_tree().current_scene.get_node("Population")
+
+
 func start(new_action: Action) -> void:
 	action = new_action
 	
@@ -14,6 +22,8 @@ func start(new_action: Action) -> void:
 	
 	# Remove idle population
 	GameState.work(action.required_population)
+	
+	workers = population.get_workers(action.required_population)
 	
 	# Create timer
 	_timer = get_tree().create_timer(action.duration)
@@ -35,6 +45,8 @@ func _on_complete() -> void:
 	
 	# Add to idle population again
 	GameState.feierabend(action.required_population)
+	
+	population.free_workers(workers)
 	
 	# Update other effects
 	GameState.add_morale(action.morale)
