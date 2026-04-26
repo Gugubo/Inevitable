@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dnvyerpmph6g3" path="res://action_button/action_button.gd" id="1_hae2l"]
 [ext_resource type="PackedScene" uid="uid://4v2l4g0sxa1c" path="res://action_button/throbber.tscn" id="3_7u7iw"]
 [ext_resource type="PackedScene" uid="uid://bpt4hjwi6xy25" path="res://action_button/resoure_count.tscn" id="4_bvlud"]
+[ext_resource type="AudioStream" uid="uid://btjcsojryo2lr" path="res://assets/audio/sfx/buttonclick_sfx.ogg" id="5_5d1x3"]
+[ext_resource type="AudioStream" uid="uid://bcr0yc1gqduhu" path="res://assets/audio/sfx/buttonrelease_sfx.ogg" id="6_vcsai"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7u7iw"]
 atlas = ExtResource("1_57oj3")
@@ -82,6 +84,16 @@ mouse_filter = 2
 root_node = NodePath("../RequiredResourcesContainer")
 libraries/ = SubResource("AnimationLibrary_vcsai")
 
+[node name="ButtonDownSFX" type="AudioStreamPlayer" parent="." unique_id=284668394]
+stream = ExtResource("5_5d1x3")
+bus = &"SFX"
+
+[node name="ButtonUpSFX" type="AudioStreamPlayer" parent="." unique_id=177639252]
+stream = ExtResource("6_vcsai")
+bus = &"SFX"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

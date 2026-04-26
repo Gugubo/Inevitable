@@ -5,6 +5,9 @@ extends TextureButton
 @onready var required_resources_container = $RequiredResourcesContainer
 @onready var animation_player = $AnimationPlayer
 
+@onready var down_sfx = $ButtonDownSFX
+@onready var up_sfx = $ButtonUpSFX
+
 @export var throbber_scene: PackedScene
 @export var resource_count_scene: PackedScene
 
@@ -81,3 +84,11 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	animation_player.play_backwards("show")
+
+
+func _on_button_down() -> void:
+	down_sfx.play()
+
+
+func _on_button_up() -> void:
+	up_sfx.play()
