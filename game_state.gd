@@ -114,6 +114,9 @@ func add_population(population_delta: int) -> void:
 
 
 func game_over() -> void:
+	if state == State.GAME_OVER:
+		return
+	
 	state = State.GAME_OVER
 	
 	game_end.emit()
