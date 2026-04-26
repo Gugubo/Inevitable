@@ -41,7 +41,9 @@ func _on_complete() -> void:
 	
 	# Add loot to inventory
 	for item in gathered_loot:
-		GameState.add_item(item, gathered_loot[item])
+		var morale_factor = smoothstep(0.0, 1.0, sqrt(GameState.morale / 100.0))
+		var amount = max(gathered_loot[item] * morale_factor, 1)
+		GameState.add_item(item, amount)
 	
 	# Add to idle population again
 	GameState.feierabend(action.required_population)
