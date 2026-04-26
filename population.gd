@@ -16,7 +16,7 @@ extends Node2D
 var citizens: Array[Citizen] = []
 
 func _ready() -> void:
-	await get_tree().create_timer(0.0001).timeout
+	await get_tree().create_timer(0.05).timeout
 	for i in range(GameState.total_population):
 		add_citizen()
 

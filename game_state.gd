@@ -29,9 +29,10 @@ var item_labels: Dictionary[Item, String] = {
 	Item.TOOLS: "Tools",
 }
 
-var state = State.PLAYING
+var state = State.MENU
 
 func _ready() -> void:
+	state = State.PLAYING
 	reset()
 
 
