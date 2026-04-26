@@ -231,6 +231,7 @@ layout_mode = 2
 item = 1
 
 [node name="Population" type="Node2D" parent="." unique_id=569172170]
+y_sort_enabled = true
 script = ExtResource("12_dg77c")
 citizen_scene = ExtResource("13_ycdy4")
 
