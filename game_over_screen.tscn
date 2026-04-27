@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cqvn8mtdk8jtw" path="res://assets/images/UI/lose-screen-window.png" id="1_w3hxg"]
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="2_l4tlu"]
 [ext_resource type="Script" uid="uid://mjc68tri511g" path="res://main_menu_button.gd" id="3_l4tlu"]
-[ext_resource type="PackedScene" uid="uid://xjxemphrcmmg" path="res://title_screen.tscn" id="4_fdghx"]
+[ext_resource type="PackedScene" uid="uid://dipc2dqnstscj" path="res://title_screen.tscn" id="4_fdghx"]
 [ext_resource type="Script" uid="uid://cltan05i03pk8" path="res://try_again_button.gd" id="4_tmhko"]
+[ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="7_lqr8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdghx"]
 atlas = ExtResource("2_l4tlu")
@@ -76,22 +77,22 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_w3hxg")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=338542052]
+[node name="CenterContainerButtons" type="CenterContainer" parent="." unique_id=338542052]
 layout_mode = 0
 offset_top = 111.0
 offset_right = 240.0
 offset_bottom = 135.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=603239307]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainerButtons" unique_id=603239307]
 layout_mode = 2
 
-[node name="TryAgainButton" type="TextureButton" parent="CenterContainer/HBoxContainer" unique_id=1156768921]
+[node name="TryAgainButton" type="TextureButton" parent="CenterContainerButtons/HBoxContainer" unique_id=1156768921]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_fdghx")
 texture_pressed = SubResource("AtlasTexture_2yv1s")
 script = ExtResource("4_tmhko")
 
-[node name="MainMenuButton" type="TextureButton" parent="CenterContainer/HBoxContainer" unique_id=250588316]
+[node name="MainMenuButton" type="TextureButton" parent="CenterContainerButtons/HBoxContainer" unique_id=250588316]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_tmhko")
 texture_pressed = SubResource("AtlasTexture_lqr8p")
@@ -101,5 +102,19 @@ title_screen_scene = ExtResource("4_fdghx")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1349526677]
 libraries/ = SubResource("AnimationLibrary_fdghx")
 
-[connection signal="pressed" from="CenterContainer/HBoxContainer/TryAgainButton" to="CenterContainer/HBoxContainer/TryAgainButton" method="_on_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/MainMenuButton" to="CenterContainer/HBoxContainer/MainMenuButton" method="_on_pressed"]
+[node name="CenterContainerTime" type="CenterContainer" parent="." unique_id=749625576]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 99.0
+offset_right = 174.0
+offset_bottom = 109.0
+
+[node name="TimeLabel" type="Label" parent="CenterContainerTime" unique_id=200626597]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.2, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("7_lqr8p")
+theme_override_font_sizes/font_size = 7
+text = "1:23:34"
+
+[connection signal="pressed" from="CenterContainerButtons/HBoxContainer/TryAgainButton" to="CenterContainerButtons/HBoxContainer/TryAgainButton" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainerButtons/HBoxContainer/MainMenuButton" to="CenterContainerButtons/HBoxContainer/MainMenuButton" method="_on_pressed"]

@@ -35,6 +35,8 @@ var item_labels: Dictionary[Item, String] = {
 
 var state = State.MENU
 
+var timer = 0.0
+
 func _ready() -> void:
 	reset()
 
@@ -49,6 +51,10 @@ func _process(delta: float) -> void:
 			game_over()
 	else:
 		corruption_game_over_timer = 0
+	
+	# Increase Timer
+	if state == State.PLAYING:
+		timer += delta
 
 
 func reset() -> void:
@@ -67,6 +73,8 @@ func reset() -> void:
 	}
 	
 	state = State.PLAYING
+	
+	timer = 0.0
 	
 	for item in inventory:
 		inventory_changed.emit(item)
