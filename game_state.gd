@@ -117,12 +117,12 @@ func feierabend(workers: int) -> void:
 
 
 func add_morale(morale_delta: float) -> void:
-	morale += morale_delta
+	morale = clampf(morale + morale_delta, 0, 100)
 	morale_changed.emit(morale)
 
 
 func add_corruption(corruption_delta: float) -> void:
-	corruption += corruption_delta
+	corruption = clampf(corruption + corruption_delta, 0, 100)
 
 
 func add_population(population_delta: int) -> void:
