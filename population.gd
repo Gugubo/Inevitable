@@ -18,6 +18,7 @@ var citizens: Array[Citizen] = []
 func _ready() -> void:
 	GameState.game_end.connect(_on_game_over)
 	GameState.restart.connect(_on_restart)
+	reset()
 
 
 func reset() -> void:
