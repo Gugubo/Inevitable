@@ -2,6 +2,7 @@ extends Control
 
 @onready var animation_player = $AnimationPlayer
 @onready var time_label = $CenterContainerTime/TimeLabel
+@onready var game_over_sfx = $GameOverSFX
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +12,8 @@ func _ready() -> void:
 func _on_game_end() -> void:
 	visible = true
 	animation_player.play("show")
+	
+	game_over_sfx.play()
 
 	time_label.text = format_time(GameState.timer)
 

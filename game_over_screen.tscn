@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dipc2dqnstscj" path="res://title_screen.tscn" id="4_fdghx"]
 [ext_resource type="Script" uid="uid://cltan05i03pk8" path="res://try_again_button.gd" id="4_tmhko"]
 [ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="7_lqr8p"]
+[ext_resource type="AudioStream" uid="uid://cndh3xv627v1n" path="res://assets/audio/sfx/gameover_sfx.ogg" id="8_r1tj2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdghx"]
 atlas = ExtResource("2_l4tlu")
@@ -115,6 +116,11 @@ theme_override_colors/font_color = Color(0.2, 0.2, 0.27450982, 1)
 theme_override_fonts/font = ExtResource("7_lqr8p")
 theme_override_font_sizes/font_size = 7
 text = "1:23:34"
+
+[node name="GameOverSFX" type="AudioStreamPlayer" parent="." unique_id=1274847106]
+stream = ExtResource("8_r1tj2")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="pressed" from="CenterContainerButtons/HBoxContainer/TryAgainButton" to="CenterContainerButtons/HBoxContainer/TryAgainButton" method="_on_pressed"]
 [connection signal="pressed" from="CenterContainerButtons/HBoxContainer/MainMenuButton" to="CenterContainerButtons/HBoxContainer/MainMenuButton" method="_on_pressed"]
