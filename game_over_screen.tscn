@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://om2qhjh7fcyx"]
+
+[ext_resource type="Script" uid="uid://dv3jpdek5j74i" path="res://game_over_screen.gd" id="1_2yv1s"]
+[ext_resource type="Texture2D" uid="uid://cqvn8mtdk8jtw" path="res://assets/images/UI/lose-screen-window.png" id="1_w3hxg"]
+[ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="2_l4tlu"]
+[ext_resource type="Script" uid="uid://mjc68tri511g" path="res://main_menu_button.gd" id="3_l4tlu"]
+[ext_resource type="PackedScene" uid="uid://xjxemphrcmmg" path="res://title_screen.tscn" id="4_fdghx"]
+[ext_resource type="Script" uid="uid://cltan05i03pk8" path="res://try_again_button.gd" id="4_tmhko"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdghx"]
+atlas = ExtResource("2_l4tlu")
+region = Rect2(384, 0, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yv1s"]
+atlas = ExtResource("2_l4tlu")
+region = Rect2(384, 13, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmhko"]
+atlas = ExtResource("2_l4tlu")
+region = Rect2(336, 0, 48, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqr8p"]
+atlas = ExtResource("2_l4tlu")
+region = Rect2(336, 13, 48, 13)
+
+[sub_resource type="Animation" id="Animation_bvlud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5d1x3"]
+resource_name = "show"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdghx"]
+_data = {
+&"RESET": SubResource("Animation_bvlud"),
+&"show": SubResource("Animation_5d1x3")
+}
+
+[node name="GameOverScreen" type="Control" unique_id=812516740]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2yv1s")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=110345585]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_w3hxg")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=338542052]
+layout_mode = 0
+offset_top = 111.0
+offset_right = 240.0
+offset_bottom = 135.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=603239307]
+layout_mode = 2
+
+[node name="TryAgainButton" type="TextureButton" parent="CenterContainer/HBoxContainer" unique_id=1156768921]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_fdghx")
+texture_pressed = SubResource("AtlasTexture_2yv1s")
+script = ExtResource("4_tmhko")
+
+[node name="MainMenuButton" type="TextureButton" parent="CenterContainer/HBoxContainer" unique_id=250588316]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_tmhko")
+texture_pressed = SubResource("AtlasTexture_lqr8p")
+script = ExtResource("3_l4tlu")
+title_screen_scene = ExtResource("4_fdghx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1349526677]
+libraries/ = SubResource("AnimationLibrary_fdghx")
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/TryAgainButton" to="CenterContainer/HBoxContainer/TryAgainButton" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/MainMenuButton" to="CenterContainer/HBoxContainer/MainMenuButton" method="_on_pressed"]

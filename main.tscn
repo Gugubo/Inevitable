@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://dqfv4og2nc5he" path="res://assets/audio/music/inevitable.wav" id="28_kq58d"]
 [ext_resource type="Texture2D" uid="uid://cyotl4fk8ghqt" path="res://assets/images/Gameplay/heart.png" id="30_seu75"]
 [ext_resource type="Script" uid="uid://do3ew6jf2h586" path="res://heart.gd" id="31_htxhm"]
+[ext_resource type="PackedScene" uid="uid://om2qhjh7fcyx" path="res://game_over_screen.tscn" id="32_jq2sk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("4_7mycd")
@@ -329,3 +330,11 @@ animation = &"beat"
 autoplay = "beat"
 frame_progress = 0.20407738
 script = ExtResource("31_htxhm")
+
+[node name="GameOverScreen" parent="." unique_id=812516740 instance=ExtResource("32_jq2sk")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

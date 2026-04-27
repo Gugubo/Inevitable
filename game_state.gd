@@ -7,6 +7,7 @@ signal inventory_changed(item: Item)
 signal population_changed
 signal morale_changed(morale: float)
 signal game_end
+signal restart
 
 var total_population = 0
 var idle_population = 0
@@ -35,7 +36,6 @@ var item_labels: Dictionary[Item, String] = {
 var state = State.MENU
 
 func _ready() -> void:
-	state = State.PLAYING
 	reset()
 
 
@@ -57,6 +57,7 @@ func reset() -> void:
 	
 	morale = 100.0
 	corruption = 0.0
+	corruption_speed = 1.0
 	
 	inventory = {
 		Item.WOOD: 10,
@@ -64,6 +65,15 @@ func reset() -> void:
 		Item.FOOD: 15,
 		Item.TOOLS: 15,
 	}
+	
+	state = State.PLAYING
+	
+	for item in inventory:
+		inventory_changed.emit(item)
+	population_changed.emit()
+	morale_changed.emit(morale)
+	
+	restart.emit()
 
 
 func add_item(item: Item, amount: int) -> void:

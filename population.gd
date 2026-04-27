@@ -17,9 +17,17 @@ var citizens: Array[Citizen] = []
 
 func _ready() -> void:
 	GameState.game_end.connect(_on_game_over)
+	GameState.restart.connect(_on_restart)
+
+
+func reset() -> void:
 	await get_tree().create_timer(0.05).timeout
 	for i in range(GameState.total_population):
 		add_citizen()
+
+
+func _on_restart() -> void:
+	reset()
 
 
 func add_citizen() -> void:

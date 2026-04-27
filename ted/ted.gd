@@ -22,14 +22,16 @@ var speed = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	position.y = y_no_corruption
-	base_x = global_position.x
+	GameState.restart.connect(_on_restart)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Calculate target based on current corruption
 	target_y = lerpf(y_no_corruption, y_full_corruption, GameState.get_corruption_factor())
+	
+	print("cf: ", GameState.get_corruption_factor())
+	print("y: ", target_y)
 	
 	# Move to target
 	position.y = lerpf(position.y, target_y, speed * delta)
@@ -44,6 +46,14 @@ func _process(delta: float) -> void:
 	else:
 		global_position.x = base_x
 
+
+func _on_restart() -> void:
+	reset()
+
+
+func reset() -> void:
+	position.y = y_no_corruption
+	base_x = global_position.x
 
 func _update_eyelid() -> void:
 	var eyelid_factor = (GameState.get_corruption_factor() - eyelid_open) / (1.0 - eyelid_open)

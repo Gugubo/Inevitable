@@ -12,6 +12,11 @@ var workers: Array[Citizen] = []
 
 func _ready():
 	population = get_tree().current_scene.get_node("Population")
+	GameState.game_end.connect(_on_game_end)
+
+
+func _on_game_end() -> void:
+	queue_free()
 
 
 func start(new_action: Action) -> void:
