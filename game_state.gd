@@ -5,7 +5,7 @@ enum State { MENU, PLAYING, GAME_OVER }
 
 signal inventory_changed(item: Item)
 signal population_changed
-signal morale_changed(morale: float)
+signal morale_changed
 signal game_end
 signal restart
 
@@ -79,7 +79,7 @@ func reset() -> void:
 	for item in inventory:
 		inventory_changed.emit(item)
 	population_changed.emit()
-	morale_changed.emit(morale)
+	morale_changed.emit()
 	
 	restart.emit()
 

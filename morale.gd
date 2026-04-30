@@ -9,9 +9,11 @@ var state = MoraleState.EUPHORIC
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameState.morale_changed.connect(_on_morale_changed)
+	_on_morale_changed() # Update at the start
 
 
-func _on_morale_changed(morale: float) -> void:
+func _on_morale_changed() -> void:
+	var morale = GameState.morale
 	var morale_index = floor((clampf(morale, 0, 100) / 100.0) * number_of_states)
 	var new_state = MoraleState.DEAD if morale <= 0 else MoraleState.values()[morale_index]
 	
