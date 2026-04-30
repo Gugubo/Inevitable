@@ -7,17 +7,17 @@
 script = ExtResource("1_y2ujf")
 item = 2
 min_amount = 10
-max_amount = 22
+max_amount = 15
 metadata/_custom_type_script = "uid://c0v0us8icuuq5"
 
 [resource]
 script = ExtResource("2_xnubb")
 name = "Hunt"
 work_area = 1
-required_population = 10
+required_population = 8
 duration = 12.0
 required_items = Dictionary[int, int]({
-3: 6
+3: 5
 })
 loot = Array[ExtResource("1_y2ujf")]([SubResource("Resource_5vw27")])
 metadata/_custom_type_script = "uid://dywud87lul1w7"

@@ -7,10 +7,11 @@
 script = ExtResource("2_3886i")
 name = "Build house"
 required_population = 8
+duration = 18.0
 required_items = Dictionary[int, int]({
 0: 10,
-1: 10
+1: 10,
+3: 5
 })
-duration = 20.0
 population_change = 10
 metadata/_custom_type_script = "uid://dywud87lul1w7"

@@ -7,8 +7,8 @@
 script = ExtResource("2_qeso6")
 name = "SACRIFICE"
 required_population = 5
-duration = 5.0
-morale = -10.0
+duration = 4.0
+morale = -15.0
 corruption = -20.0
 population_change = -5
 metadata/_custom_type_script = "uid://dywud87lul1w7"

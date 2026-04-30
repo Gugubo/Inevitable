@@ -14,8 +14,8 @@ var idle_population = 0
 var morale = 0.0 # 0 - 100
 var corruption = 0.0 # 0 - 100
 
-var corruption_speed = 1.0
-var corruption_acceleration = 0.002
+var corruption_speed = 1
+var corruption_acceleration = 0.012
 
 var corruption_game_over_period = 10
 var corruption_game_over_timer = 0
@@ -61,15 +61,15 @@ func reset() -> void:
 	total_population = 30
 	idle_population = total_population
 	
-	morale = 100.0
+	morale = 80.0
 	corruption = 0.0
 	corruption_speed = 1.0
 	
 	inventory = {
-		Item.WOOD: 10,
-		Item.STONE: 10,
-		Item.FOOD: 15,
-		Item.TOOLS: 15,
+		Item.WOOD: 25,
+		Item.STONE: 25,
+		Item.FOOD: 25,
+		Item.TOOLS: 30,
 	}
 	
 	state = State.PLAYING

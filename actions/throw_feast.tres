@@ -6,10 +6,10 @@
 [resource]
 script = ExtResource("2_5je0u")
 name = "Throw feast"
-required_population = 10
+required_population = 8
+duration = 10.0
 required_items = Dictionary[int, int]({
 2: 15
 })
-duration = 10.0
-morale = 25.0
+morale = 20.0
 metadata/_custom_type_script = "uid://dywud87lul1w7"
