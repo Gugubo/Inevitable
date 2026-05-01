@@ -9,6 +9,8 @@ signal morale_changed
 signal game_end
 signal restart
 
+var MAX_ITEM_COUNT = 999
+
 var total_population = 0
 var idle_population = 0
 var morale = 0.0 # 0 - 100
@@ -86,6 +88,7 @@ func reset() -> void:
 
 func add_item(item: Item, amount: int) -> void:
 	inventory[item] += amount
+	inventory[item] = clamp(inventory[item], 0, MAX_ITEM_COUNT)
 	inventory_changed.emit(item)
 
 
