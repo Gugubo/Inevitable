@@ -10,6 +10,7 @@ signal game_end
 signal restart
 
 var MAX_ITEM_COUNT = 999
+var MAX_POPULATION = 999
 
 var total_population = 0
 var idle_population = 0
@@ -132,8 +133,12 @@ func add_population(population_delta: int) -> void:
 	if population_delta == 0:
 		return
 	
-	total_population += population_delta
-	idle_population += population_delta
+	# Handle max population
+	var new_total_population = clamp(total_population + population_delta, 0, MAX_POPULATION)
+	var population_added = new_total_population - total_population
+	
+	total_population += population_added
+	idle_population += population_added
 	
 	if total_population <= 0:
 		game_over()

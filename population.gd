@@ -32,6 +32,9 @@ func _on_restart() -> void:
 
 
 func add_citizen() -> void:
+	if citizens.size() >= GameState.MAX_POPULATION:
+		return
+	
 	var citizen = citizen_scene.instantiate() as Citizen
 	citizens.append(citizen)
 	
