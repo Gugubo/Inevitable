@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4v2l4g0sxa1c"]
 
 [ext_resource type="Texture2D" uid="uid://cesnxngi2pw03" path="res://assets/images/UI/throbber.png" id="1_vjlou"]
-[ext_resource type="Script" uid="uid://dtldvtci3af63" path="res://action_button/throbber.gd" id="2_52ci0"]
+[ext_resource type="Script" uid="uid://dtldvtci3af63" path="res://main/ui/action_button/throbber.gd" id="2_52ci0"]
 
 [sub_resource type="Animation" id="Animation_52ci0"]
 length = 0.001

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://uc1lc4i3of7i"]
 
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="1_57oj3"]
-[ext_resource type="Script" uid="uid://dnvyerpmph6g3" path="res://action_button/action_button.gd" id="1_hae2l"]
-[ext_resource type="PackedScene" uid="uid://4v2l4g0sxa1c" path="res://action_button/throbber.tscn" id="3_7u7iw"]
-[ext_resource type="PackedScene" uid="uid://bpt4hjwi6xy25" path="res://action_button/resoure_count.tscn" id="4_bvlud"]
+[ext_resource type="Script" uid="uid://dnvyerpmph6g3" path="res://main/ui/action_button/action_button.gd" id="1_hae2l"]
+[ext_resource type="PackedScene" uid="uid://4v2l4g0sxa1c" path="res://main/ui/action_button/throbber.tscn" id="3_7u7iw"]
+[ext_resource type="PackedScene" uid="uid://bpt4hjwi6xy25" path="res://main/ui/action_button/resoure_count.tscn" id="4_bvlud"]
 [ext_resource type="AudioStream" uid="uid://btjcsojryo2lr" path="res://assets/audio/sfx/buttonclick_sfx.ogg" id="5_5d1x3"]
 [ext_resource type="AudioStream" uid="uid://bcr0yc1gqduhu" path="res://assets/audio/sfx/buttonrelease_sfx.ogg" id="6_vcsai"]
 

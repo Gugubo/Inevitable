@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxm1wuq01vwrr"]
 
 [ext_resource type="Texture2D" uid="uid://clqjwa7loq0on" path="res://assets/images/Gameplay/ted/ted-small-eye-1.png" id="1_anlqy"]
-[ext_resource type="Script" uid="uid://0p6hk40pj0ue" path="res://ted/small_eye.gd" id="2_oktve"]
+[ext_resource type="Script" uid="uid://0p6hk40pj0ue" path="res://main/ted/small_eye.gd" id="2_oktve"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtgle"]
 atlas = ExtResource("1_anlqy")

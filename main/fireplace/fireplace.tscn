@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d317r3l4n58wt" path="res://assets/images/Gameplay/fire-lit.png" id="1_36lha"]
 [ext_resource type="Texture2D" uid="uid://b7emmwwe7fd18" path="res://assets/images/Gameplay/fire-unlit.png" id="2_mr4w2"]
-[ext_resource type="Script" uid="uid://d3n4ccaipxtj7" path="res://fireplace.gd" id="3_7l1op"]
+[ext_resource type="Script" uid="uid://d3n4ccaipxtj7" path="res://main/fireplace/fireplace.gd" id="3_7l1op"]
 [ext_resource type="Texture2D" uid="uid://c2hb6fw04tmis" path="res://assets/images/Gameplay/smoke.png" id="4_n6y25"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dg77c"]

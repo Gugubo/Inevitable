@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://om2qhjh7fcyx"]
 
-[ext_resource type="Script" uid="uid://dv3jpdek5j74i" path="res://game_over_screen.gd" id="1_2yv1s"]
+[ext_resource type="Script" uid="uid://dv3jpdek5j74i" path="res://game_over_screen/game_over_screen.gd" id="1_2yv1s"]
 [ext_resource type="Texture2D" uid="uid://cqvn8mtdk8jtw" path="res://assets/images/UI/lose-screen-window.png" id="1_w3hxg"]
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="2_l4tlu"]
-[ext_resource type="Script" uid="uid://mjc68tri511g" path="res://main_menu_button.gd" id="3_l4tlu"]
-[ext_resource type="Script" uid="uid://cltan05i03pk8" path="res://try_again_button.gd" id="4_tmhko"]
+[ext_resource type="Script" uid="uid://mjc68tri511g" path="res://game_over_screen/main_menu_button.gd" id="3_l4tlu"]
+[ext_resource type="Script" uid="uid://cltan05i03pk8" path="res://game_over_screen/try_again_button.gd" id="4_tmhko"]
 [ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="7_lqr8p"]
 [ext_resource type="AudioStream" uid="uid://cndh3xv627v1n" path="res://assets/audio/sfx/gameover_sfx.ogg" id="8_r1tj2"]
 

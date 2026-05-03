@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://oplkeubmpyxy"]
 
 [ext_resource type="Texture2D" uid="uid://dxv3433sg6dtt" path="res://assets/images/Gameplay/citizen.png" id="1_3aquc"]
-[ext_resource type="Script" uid="uid://dndulv7tt03mg" path="res://citizen.gd" id="1_noc4a"]
+[ext_resource type="Script" uid="uid://dndulv7tt03mg" path="res://main/citizens/citizen.gd" id="1_noc4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fat3w"]
 atlas = ExtResource("1_3aquc")

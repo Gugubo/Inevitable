@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bpt4hjwi6xy25"]
 
-[ext_resource type="Script" uid="uid://blnq57e5m8wvy" path="res://action_button/resoure_count.gd" id="1_k6bog"]
-[ext_resource type="Texture2D" uid="uid://c281ff0pos62h" path="res://action_button/icons/population.tres" id="2_kcsd4"]
+[ext_resource type="Script" uid="uid://blnq57e5m8wvy" path="res://main/ui/action_button/resoure_count.gd" id="1_k6bog"]
+[ext_resource type="Texture2D" uid="uid://c281ff0pos62h" path="res://main/ui/action_button/icons/population.tres" id="2_kcsd4"]
 [ext_resource type="Texture2D" uid="uid://b851y26ywjhgn" path="res://assets/images/UI/resources.png" id="2_mp6li"]
 [ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="3_kcsd4"]
-[ext_resource type="Texture2D" uid="uid://dc1xta4qhkcur" path="res://action_button/icons/tools.tres" id="3_leixf"]
-[ext_resource type="Texture2D" uid="uid://dqo4j2woe71a8" path="res://action_button/icons/food.tres" id="4_50qcp"]
-[ext_resource type="Texture2D" uid="uid://c4b5sefu70noi" path="res://action_button/icons/wood.tres" id="5_dkbsl"]
-[ext_resource type="Texture2D" uid="uid://cgyq1w33l43c2" path="res://action_button/icons/stone.tres" id="6_3d2qn"]
+[ext_resource type="Texture2D" uid="uid://dc1xta4qhkcur" path="res://main/ui/action_button/icons/tools.tres" id="3_leixf"]
+[ext_resource type="Texture2D" uid="uid://dqo4j2woe71a8" path="res://main/ui/action_button/icons/food.tres" id="4_50qcp"]
+[ext_resource type="Texture2D" uid="uid://c4b5sefu70noi" path="res://main/ui/action_button/icons/wood.tres" id="5_dkbsl"]
+[ext_resource type="Texture2D" uid="uid://cgyq1w33l43c2" path="res://main/ui/action_button/icons/stone.tres" id="6_3d2qn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jrom"]
 atlas = ExtResource("2_mp6li")

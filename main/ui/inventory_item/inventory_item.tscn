@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1jknid0wh26y"]
 
-[ext_resource type="Script" uid="uid://5cs6xf4cgoti" path="res://inventory_item/inventory_item.gd" id="1_gmchj"]
+[ext_resource type="Script" uid="uid://5cs6xf4cgoti" path="res://main/ui/inventory_item/inventory_item.gd" id="1_gmchj"]
 [ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="1_vu2ie"]
 
 [node name="InventoryItem" type="Label" unique_id=283968797]

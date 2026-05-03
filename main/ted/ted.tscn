@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b3xqhcafcla8a"]
 
-[ext_resource type="Script" uid="uid://cabwd385oh2pu" path="res://ted/ted.gd" id="1_828yg"]
+[ext_resource type="Script" uid="uid://cabwd385oh2pu" path="res://main/ted/ted.gd" id="1_828yg"]
 [ext_resource type="Texture2D" uid="uid://bor07uqc0og57" path="res://assets/images/Gameplay/ted/ted-tenticles.png" id="2_smm3a"]
 [ext_resource type="Texture2D" uid="uid://dsum1narsxc41" path="res://assets/images/Gameplay/ted/ted-eye.png" id="3_fi5av"]
 [ext_resource type="Texture2D" uid="uid://bbpfu6relyoxt" path="res://assets/images/Gameplay/ted/ted-body.png" id="4_6jylm"]
 [ext_resource type="Texture2D" uid="uid://cut4axmydc3sy" path="res://assets/images/Gameplay/ted/ted-eyelid.png" id="5_1x6fi"]
-[ext_resource type="PackedScene" uid="uid://bxm1wuq01vwrr" path="res://ted/small_eye.tscn" id="6_smm3a"]
+[ext_resource type="PackedScene" uid="uid://bxm1wuq01vwrr" path="res://main/ted/small_eye.tscn" id="6_smm3a"]
 [ext_resource type="Texture2D" uid="uid://2iy5kjl62qa0" path="res://assets/images/Gameplay/ted/ted-small-eye-2.png" id="7_0dud2"]
 [ext_resource type="Texture2D" uid="uid://bkphawpdwoq7q" path="res://assets/images/Gameplay/ted/ted-small-eye-3.png" id="8_ncnjy"]
 [ext_resource type="Texture2D" uid="uid://6vpxse5nncsa" path="res://assets/images/Gameplay/ted/ted-small-eye-4.png" id="9_glro8"]
