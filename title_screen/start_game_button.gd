@@ -1,4 +1,4 @@
-extends TextureButton
+extends ButtonWithSound
 
 @export var main_scene: PackedScene
 

@@ -1,4 +1,4 @@
-extends TextureButton
+extends ButtonWithSound
 
 @onready var main_menu = $"../.."
 @onready var how_to_play = $"../../../HowToPlay"

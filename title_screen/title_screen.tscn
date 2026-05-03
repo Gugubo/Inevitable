@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dklqemx8c2odt" path="res://title_screen/start_game_button.gd" id="4_hafda"]
 [ext_resource type="PackedScene" uid="uid://tq2gb80av05a" path="res://main/main.tscn" id="5_tpml5"]
 [ext_resource type="Script" uid="uid://b0altx2jkhdvm" path="res://title_screen/how_to_play_button.gd" id="6_013yr"]
+[ext_resource type="PackedScene" uid="uid://clmkjhyjdgmi6" path="res://button/button_with_sound.tscn" id="7_jabur"]
 [ext_resource type="Texture2D" uid="uid://ct0u3ake51to" path="res://assets/images/UI/title-screen/title-tutorial.png" id="8_8vmu4"]
 [ext_resource type="Script" uid="uid://4j8rdiko8xie" path="res://title_screen/back_button.gd" id="9_8vmu4"]
 [ext_resource type="AudioStream" uid="uid://d4jgtsls1iw37" path="res://assets/audio/music/inevitable_title.wav" id="10_xfn3p"]
@@ -72,14 +73,14 @@ offset_bottom = 135.0
 [node name="Buttons" type="VBoxContainer" parent="CenterContainer" unique_id=1146704467]
 layout_mode = 2
 
-[node name="StartGameButton" type="TextureButton" parent="CenterContainer/Buttons" unique_id=1397551114]
+[node name="StartGameButton" parent="CenterContainer/Buttons" unique_id=227172006 instance=ExtResource("7_jabur")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_tpml5")
 texture_pressed = SubResource("AtlasTexture_jqemp")
 script = ExtResource("4_hafda")
 main_scene = ExtResource("5_tpml5")
 
-[node name="HowToPlayButton" type="TextureButton" parent="CenterContainer/Buttons" unique_id=291857602]
+[node name="HowToPlayButton" parent="CenterContainer/Buttons" unique_id=1660298299 instance=ExtResource("7_jabur")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_013yr")
 texture_pressed = SubResource("AtlasTexture_05l2w")
@@ -88,7 +89,7 @@ script = ExtResource("6_013yr")
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Buttons" unique_id=1744441587]
 layout_mode = 2
 
-[node name="QuitButton" type="TextureButton" parent="CenterContainer/Buttons/CenterContainer" unique_id=673530562]
+[node name="QuitButton" parent="CenterContainer/Buttons/CenterContainer" unique_id=673530562 instance=ExtResource("7_jabur")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ig5kc")
 texture_pressed = SubResource("AtlasTexture_8vmu4")
@@ -107,7 +108,7 @@ offset_top = 115.0
 offset_right = 240.0
 offset_bottom = 135.0
 
-[node name="BackButton" type="TextureButton" parent="HowToPlay/CenterContainer" unique_id=1098225810]
+[node name="BackButton" parent="HowToPlay/CenterContainer" unique_id=1098225810 instance=ExtResource("7_jabur")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_xfn3p")
 texture_pressed = SubResource("AtlasTexture_rhgbh")
@@ -117,8 +118,3 @@ script = ExtResource("9_8vmu4")
 stream = ExtResource("10_xfn3p")
 autoplay = true
 bus = &"Music"
-
-[connection signal="pressed" from="CenterContainer/Buttons/StartGameButton" to="CenterContainer/Buttons/StartGameButton" method="_on_pressed"]
-[connection signal="pressed" from="CenterContainer/Buttons/HowToPlayButton" to="CenterContainer/Buttons/HowToPlayButton" method="_on_pressed"]
-[connection signal="pressed" from="CenterContainer/Buttons/CenterContainer/QuitButton" to="CenterContainer/Buttons/CenterContainer/QuitButton" method="_on_pressed"]
-[connection signal="pressed" from="HowToPlay/CenterContainer/BackButton" to="HowToPlay/CenterContainer/BackButton" method="_on_pressed"]

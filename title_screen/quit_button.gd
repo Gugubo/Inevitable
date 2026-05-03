@@ -1,4 +1,4 @@
-extends TextureButton
+extends ButtonWithSound
 
 
 func _on_pressed() -> void:
