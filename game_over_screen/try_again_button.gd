@@ -1,4 +1,4 @@
-extends TextureButton
+extends ButtonWithSound
 
 @onready var game_over_screen = $"../../.."
 

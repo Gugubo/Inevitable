@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://mjc68tri511g" path="res://game_over_screen/main_menu_button.gd" id="3_l4tlu"]
 [ext_resource type="Script" uid="uid://cltan05i03pk8" path="res://game_over_screen/try_again_button.gd" id="4_tmhko"]
 [ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="7_lqr8p"]
+[ext_resource type="PackedScene" uid="uid://clmkjhyjdgmi6" path="res://button/button_with_sound.tscn" id="8_bib4b"]
 [ext_resource type="AudioStream" uid="uid://cndh3xv627v1n" path="res://assets/audio/sfx/gameover_sfx.ogg" id="8_r1tj2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdghx"]
@@ -86,13 +87,13 @@ offset_bottom = 135.0
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainerButtons" unique_id=603239307]
 layout_mode = 2
 
-[node name="TryAgainButton" type="TextureButton" parent="CenterContainerButtons/HBoxContainer" unique_id=1156768921]
+[node name="TryAgainButton" parent="CenterContainerButtons/HBoxContainer" unique_id=1156768921 instance=ExtResource("8_bib4b")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_fdghx")
 texture_pressed = SubResource("AtlasTexture_2yv1s")
 script = ExtResource("4_tmhko")
 
-[node name="MainMenuButton" type="TextureButton" parent="CenterContainerButtons/HBoxContainer" unique_id=250588316]
+[node name="MainMenuButton" parent="CenterContainerButtons/HBoxContainer" unique_id=250588316 instance=ExtResource("8_bib4b")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_tmhko")
 texture_pressed = SubResource("AtlasTexture_lqr8p")
@@ -119,6 +120,3 @@ text = "1:23:34"
 stream = ExtResource("8_r1tj2")
 volume_db = 5.0
 bus = &"SFX"
-
-[connection signal="pressed" from="CenterContainerButtons/HBoxContainer/TryAgainButton" to="CenterContainerButtons/HBoxContainer/TryAgainButton" method="_on_pressed"]
-[connection signal="pressed" from="CenterContainerButtons/HBoxContainer/MainMenuButton" to="CenterContainerButtons/HBoxContainer/MainMenuButton" method="_on_pressed"]
