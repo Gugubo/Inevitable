@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://dnextsah71sq4" path="res://assets/audio/sfx/sacrifice_sfx.ogg" id="19_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://b851y26ywjhgn" path="res://assets/images/UI/resources.png" id="20_getpj"]
 [ext_resource type="Script" uid="uid://bvw2u3t8ixsal" path="res://main/ui/morale.gd" id="21_ryguw"]
+[ext_resource type="Script" uid="uid://bce5cyxip4ews" path="res://main/hide_sacrifice_button.gd" id="22_576ah"]
 [ext_resource type="AudioStream" uid="uid://bojeosbf85vbo" path="res://assets/audio/sfx/build_sfx.ogg" id="22_ryguw"]
 [ext_resource type="AudioStream" uid="uid://dqfv4og2nc5he" path="res://assets/audio/music/inevitable.wav" id="28_kq58d"]
 [ext_resource type="Texture2D" uid="uid://cyotl4fk8ghqt" path="res://assets/images/Gameplay/heart.png" id="30_seu75"]
@@ -251,6 +252,13 @@ texture_pressed = SubResource("AtlasTexture_d13ii")
 texture_disabled = SubResource("AtlasTexture_1u8w0")
 completed_sfx_stream = ExtResource("19_qsp4k")
 action = ExtResource("14_ryguw")
+
+[node name="HideSacrificeButton" type="Node" parent="ActionButtons/ButtonSacrifice" unique_id=1473354877]
+script = ExtResource("22_576ah")
+
+[node name="AppearSFX" type="AudioStreamPlayer" parent="ActionButtons/ButtonSacrifice/HideSacrificeButton" unique_id=1862844319]
+stream = ExtResource("19_qsp4k")
+bus = &"SFX"
 
 [node name="Inventory" type="VBoxContainer" parent="." unique_id=1661290803]
 offset_left = 22.0
