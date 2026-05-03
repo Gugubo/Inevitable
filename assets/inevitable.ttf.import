@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dsg1000gjyh5p"
-path="res://.godot/imported/inevitable-font.ttf-a3ffa2454ca11da988e37fc2010832ad.fontdata"
+uid="uid://qg5hu8fpl3cw"
+path="res://.godot/imported/inevitable.ttf-28b9533a906c3fa819b6560ef9fe33c4.fontdata"
 
 [deps]
 
-source_file="res://assets/inevitable-font.ttf"
-dest_files=["res://.godot/imported/inevitable-font.ttf-a3ffa2454ca11da988e37fc2010832ad.fontdata"]
+source_file="res://assets/inevitable.ttf"
+dest_files=["res://.godot/imported/inevitable.ttf-28b9533a906c3fa819b6560ef9fe33c4.fontdata"]
 
 [params]
 
@@ -30,7 +30,13 @@ Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[]
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0),
+&"variation_embolden": 0.0
+}]
 language_support={}
 script_support={}
 opentype_features={}

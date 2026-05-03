@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://b0qbuj7b110q8"]
+
+[ext_resource type="FontFile" uid="uid://qg5hu8fpl3cw" path="res://assets/inevitable.ttf" id="1_e1x85"]
+
+[resource]
+default_font = ExtResource("1_e1x85")
+default_font_size = 9

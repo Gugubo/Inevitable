@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="2_l4tlu"]
 [ext_resource type="Script" uid="uid://mjc68tri511g" path="res://game_over_screen/main_menu_button.gd" id="3_l4tlu"]
 [ext_resource type="Script" uid="uid://cltan05i03pk8" path="res://game_over_screen/try_again_button.gd" id="4_tmhko"]
-[ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="7_lqr8p"]
+[ext_resource type="Theme" uid="uid://b0qbuj7b110q8" path="res://theme.tres" id="7_bib4b"]
 [ext_resource type="PackedScene" uid="uid://clmkjhyjdgmi6" path="res://button/button_with_sound.tscn" id="8_bib4b"]
 [ext_resource type="AudioStream" uid="uid://cndh3xv627v1n" path="res://assets/audio/sfx/gameover_sfx.ogg" id="8_r1tj2"]
 
@@ -111,9 +111,8 @@ offset_bottom = 109.0
 
 [node name="TimeLabel" type="Label" parent="CenterContainerTime" unique_id=200626597]
 layout_mode = 2
+theme = ExtResource("7_bib4b")
 theme_override_colors/font_color = Color(0.2, 0.2, 0.27450982, 1)
-theme_override_fonts/font = ExtResource("7_lqr8p")
-theme_override_font_sizes/font_size = 7
 text = "1:23:34"
 
 [node name="GameOverSFX" type="AudioStreamPlayer" parent="." unique_id=1274847106]

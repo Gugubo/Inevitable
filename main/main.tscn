@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://uc1lc4i3of7i" path="res://main/ui/action_button/action_button.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://beayunt17uq6t" path="res://main/ui/inventory_item/population_count.gd" id="6_272bh"]
-[ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="6_efxa6"]
 [ext_resource type="AudioStream" uid="uid://rnfthrajw8nk" path="res://assets/audio/sfx/chop_sfx.ogg" id="8_0odxb"]
 [ext_resource type="Texture2D" uid="uid://cy57hywbifofx" path="res://assets/images/Gameplay/sky.png" id="8_4c57u"]
 [ext_resource type="Resource" uid="uid://i07fg5tavs5" path="res://actions/gather_wood.tres" id="8_yaehf"]
@@ -29,6 +28,7 @@
 [ext_resource type="Script" uid="uid://bvw2u3t8ixsal" path="res://main/ui/morale.gd" id="21_ryguw"]
 [ext_resource type="Script" uid="uid://bce5cyxip4ews" path="res://main/hide_sacrifice_button.gd" id="22_576ah"]
 [ext_resource type="AudioStream" uid="uid://bojeosbf85vbo" path="res://assets/audio/sfx/build_sfx.ogg" id="22_ryguw"]
+[ext_resource type="Theme" uid="uid://b0qbuj7b110q8" path="res://theme.tres" id="23_576ah"]
 [ext_resource type="AudioStream" uid="uid://dqfv4og2nc5he" path="res://assets/audio/music/inevitable.wav" id="28_kq58d"]
 [ext_resource type="Texture2D" uid="uid://cyotl4fk8ghqt" path="res://assets/images/Gameplay/heart.png" id="30_seu75"]
 [ext_resource type="Script" uid="uid://do3ew6jf2h586" path="res://main/ui/heart.gd" id="31_htxhm"]
@@ -262,15 +262,14 @@ bus = &"SFX"
 
 [node name="Inventory" type="VBoxContainer" parent="." unique_id=1661290803]
 offset_left = 22.0
-offset_top = 24.0
+offset_top = 22.0
 offset_right = 44.0
 offset_bottom = 97.0
-theme_override_constants/separation = 10
+theme_override_constants/separation = 5
 
 [node name="Population" type="Label" parent="Inventory" unique_id=70089085]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_efxa6")
-theme_override_font_sizes/font_size = 7
+theme = ExtResource("23_576ah")
 text = "x999"
 horizontal_alignment = 2
 script = ExtResource("6_272bh")

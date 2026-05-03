@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://blnq57e5m8wvy" path="res://main/ui/action_button/resoure_count.gd" id="1_k6bog"]
 [ext_resource type="Texture2D" uid="uid://c281ff0pos62h" path="res://main/ui/action_button/icons/population.tres" id="2_kcsd4"]
 [ext_resource type="Texture2D" uid="uid://b851y26ywjhgn" path="res://assets/images/UI/resources.png" id="2_mp6li"]
-[ext_resource type="FontFile" uid="uid://dsg1000gjyh5p" path="res://assets/inevitable-font.ttf" id="3_kcsd4"]
 [ext_resource type="Texture2D" uid="uid://dc1xta4qhkcur" path="res://main/ui/action_button/icons/tools.tres" id="3_leixf"]
 [ext_resource type="Texture2D" uid="uid://dqo4j2woe71a8" path="res://main/ui/action_button/icons/food.tres" id="4_50qcp"]
 [ext_resource type="Texture2D" uid="uid://c4b5sefu70noi" path="res://main/ui/action_button/icons/wood.tres" id="5_dkbsl"]
 [ext_resource type="Texture2D" uid="uid://cgyq1w33l43c2" path="res://main/ui/action_button/icons/stone.tres" id="6_3d2qn"]
+[ext_resource type="Theme" uid="uid://b0qbuj7b110q8" path="res://theme.tres" id="7_no1b1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jrom"]
 atlas = ExtResource("2_mp6li")
@@ -29,8 +29,7 @@ textures = Dictionary[int, Texture2D]({
 
 [node name="Label" type="Label" parent="." unique_id=670025333]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_kcsd4")
-theme_override_font_sizes/font_size = 7
+theme = ExtResource("7_no1b1")
 text = "5"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1568280698]
