@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://clmkjhyjdgmi6"]
+
+[ext_resource type="Texture2D" uid="uid://danveed5ycfnl" path="res://assets/images/UI/buttons.png" id="1_5ng1f"]
+[ext_resource type="Script" uid="uid://dps6o7x2v1unq" path="res://button/button_with_sound.gd" id="2_5ng1f"]
+[ext_resource type="AudioStream" uid="uid://btjcsojryo2lr" path="res://assets/audio/sfx/buttonclick_sfx.ogg" id="3_jp3rj"]
+[ext_resource type="AudioStream" uid="uid://bcr0yc1gqduhu" path="res://assets/audio/sfx/buttonrelease_sfx.ogg" id="4_y4m4t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u7iw"]
+atlas = ExtResource("1_5ng1f")
+region = Rect2(0, 0, 48, 13)
+
+[node name="Button" type="TextureButton" unique_id=1298078554]
+offset_right = 48.0
+offset_bottom = 13.0
+texture_normal = SubResource("AtlasTexture_7u7iw")
+script = ExtResource("2_5ng1f")
+
+[node name="ButtonDownSFX" type="AudioStreamPlayer" parent="." unique_id=284668394]
+stream = ExtResource("3_jp3rj")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="ButtonUpSFX" type="AudioStreamPlayer" parent="." unique_id=177639252]
+stream = ExtResource("4_y4m4t")
+volume_db = -20.0
+bus = &"SFX"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
