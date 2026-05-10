@@ -4,7 +4,7 @@ extends Label
 
 @export var color_normal = Color.WHITE
 @export var color_low = Color.CRIMSON
-@export var low_threshold = 5
+@export var low_threshold = 11
 
 func _ready():
 	GameState.inventory_changed.connect(_on_inventory_changed)
