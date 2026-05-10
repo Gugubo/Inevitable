@@ -9,8 +9,8 @@ name = "Build house"
 required_population = 8
 duration = 18.0
 required_items = Dictionary[int, int]({
-0: 10,
-1: 10,
+0: 7,
+1: 7,
 3: 5
 })
 population_change = 10

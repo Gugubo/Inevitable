@@ -255,6 +255,7 @@ action = ExtResource("14_ryguw")
 
 [node name="HideSacrificeButton" type="Node" parent="ActionButtons/ButtonSacrifice" unique_id=1473354877]
 script = ExtResource("22_576ah")
+reveal_threshold = 0.65
 
 [node name="AppearSFX" type="AudioStreamPlayer" parent="ActionButtons/ButtonSacrifice/HideSacrificeButton" unique_id=1862844319]
 stream = ExtResource("19_qsp4k")

@@ -14,7 +14,7 @@ script = ExtResource("2_4ynt4")
 name = "Gather wood"
 work_area = 1
 required_population = 5
-duration = 7.0
+duration = 8.0
 required_items = Dictionary[int, int]({
 3: 3
 })

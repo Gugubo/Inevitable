@@ -15,7 +15,7 @@ script = ExtResource("2_3cbmj")
 name = "Smith"
 work_area = 2
 required_population = 3
-duration = 10.0
+duration = 8.0
 required_items = Dictionary[int, int]({
 0: 2,
 1: 4

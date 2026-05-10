@@ -18,7 +18,7 @@ var morale = 0.0 # 0 - 100
 var corruption = 0.0 # 0 - 100
 
 var corruption_speed = 1
-var corruption_acceleration = 0.012
+var corruption_acceleration = 0.010
 
 var corruption_game_over_period = 10
 var corruption_game_over_timer = 0
@@ -69,9 +69,9 @@ func reset() -> void:
 	corruption_speed = 1.0
 	
 	inventory = {
-		Item.WOOD: 25,
-		Item.STONE: 25,
-		Item.FOOD: 25,
+		Item.WOOD: 20,
+		Item.STONE: 20,
+		Item.FOOD: 20,
 		Item.TOOLS: 30,
 	}
 	
